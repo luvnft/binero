@@ -1,0 +1,45 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`returns "undefined" if no line that can be equal to another exist 1`] = `undefined`;
+
+exports[`returns "undefined" if no line that can be equal to another exist 2`] = `undefined`;
+
+exports[`returns "undefined" if no line that can be equal to another exist 3`] = `undefined`;
+
+exports[`returns "undefined" if no line that can be equal to another exist 4`] = `undefined`;
+
+exports[`selects line that can be equal to another 1`] = `1`;
+
+exports[`selects line that can be equal to another 2`] = `
+{🟥} {⬜} {⬜} {🟦}
+[⬜] [⬜] [⬜] [⬜]
+{🟥} {⬜} {⬜} {🟦}
+[⬜] [⬜] [⬜] [⬜]
+`;
+
+exports[`selects line that can be equal to another 3`] = `1`;
+
+exports[`selects line that can be equal to another 4`] = `
+[⬜] [⬜] [⬜] [⬜]
+{🟥} {⬜} {⬜} {🟦}
+[⬜] [⬜] [⬜] [⬜]
+{🟥} {⬜} {⬜} {🟦}
+`;
+
+exports[`selects line that can be equal to another 5`] = `0`;
+
+exports[`selects line that can be equal to another 6`] = `
+{🟥} [⬜] {🟥} [⬜]
+{⬜} [⬜] {⬜} [⬜]
+{⬜} [⬜] {⬜} [⬜]
+{🟦} [⬜] {🟦} [⬜]
+`;
+
+exports[`selects line that can be equal to another 7`] = `0`;
+
+exports[`selects line that can be equal to another 8`] = `
+[⬜] {🟥} [⬜] {🟥}
+[⬜] {⬜} [⬜] {⬜}
+[⬜] {⬜} [⬜] {⬜}
+[⬜] {🟦} [⬜] {🟦}
+`;

@@ -1,0 +1,111 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`returns "undefined" if no unfilled balanced line exist 1`] = `undefined`;
+
+exports[`returns "undefined" if no unfilled balanced line exist 2`] = `undefined`;
+
+exports[`returns "undefined" if no unfilled balanced line exist 3`] = `undefined`;
+
+exports[`returns "undefined" if no unfilled balanced line exist 4`] = `undefined`;
+
+exports[`returns "undefined" if no unfilled balanced line exist 5`] = `undefined`;
+
+exports[`returns "undefined" if no unfilled balanced line exist 6`] = `undefined`;
+
+exports[`returns "undefined" if no unfilled balanced line exist 7`] = `undefined`;
+
+exports[`returns "undefined" if no unfilled balanced line exist 8`] = `undefined`;
+
+exports[`returns "undefined" if no unfilled balanced line exist 9`] = `undefined`;
+
+exports[`returns "undefined" if no unfilled balanced line exist 10`] = `undefined`;
+
+exports[`selects unfilled balanced line 1`] = `1`;
+
+exports[`selects unfilled balanced line 2`] = `
+[⬜] [⬜] [⬜] [⬜]
+{🟥} {🟥} {⬜} {⬜}
+[⬜] [⬜] [⬜] [⬜]
+[⬜] [⬜] [⬜] [⬜]
+`;
+
+exports[`selects unfilled balanced line 3`] = `1`;
+
+exports[`selects unfilled balanced line 4`] = `
+[⬜] [⬜] [⬜] [⬜]
+{⬜} {🟥} {⬜} {🟥}
+[⬜] [⬜] [⬜] [⬜]
+[⬜] [⬜] [⬜] [⬜]
+`;
+
+exports[`selects unfilled balanced line 5`] = `1`;
+
+exports[`selects unfilled balanced line 6`] = `
+[⬜] [⬜] [⬜] [⬜]
+{🟥} {⬜} {⬜} {🟥}
+[⬜] [⬜] [⬜] [⬜]
+[⬜] [⬜] [⬜] [⬜]
+`;
+
+exports[`selects unfilled balanced line 7`] = `0`;
+
+exports[`selects unfilled balanced line 8`] = `
+[⬜] {🟥} [⬜] [⬜]
+[⬜] {🟥} [⬜] [⬜]
+[⬜] {⬜} [⬜] [⬜]
+[⬜] {⬜} [⬜] [⬜]
+`;
+
+exports[`selects unfilled balanced line 9`] = `0`;
+
+exports[`selects unfilled balanced line 10`] = `
+[⬜] {⬜} [⬜] [⬜]
+[⬜] {🟥} [⬜] [⬜]
+[⬜] {⬜} [⬜] [⬜]
+[⬜] {🟥} [⬜] [⬜]
+`;
+
+exports[`selects unfilled balanced line 11`] = `0`;
+
+exports[`selects unfilled balanced line 12`] = `
+[⬜] {🟥} [⬜] [⬜]
+[⬜] {⬜} [⬜] [⬜]
+[⬜] {⬜} [⬜] [⬜]
+[⬜] {🟥} [⬜] [⬜]
+`;
+
+exports[`selects unfilled balanced line 13`] = `1`;
+
+exports[`selects unfilled balanced line 14`] = `
+[⬜] [⬜] [⬜] [⬜]
+{🟥} {🟥} {🟦} {⬜}
+[⬜] [⬜] [⬜] [⬜]
+[⬜] [⬜] [⬜] [⬜]
+`;
+
+exports[`selects unfilled balanced line 15`] = `1`;
+
+exports[`selects unfilled balanced line 16`] = `
+[⬜] [⬜] [⬜] [⬜]
+{⬜} {🟥} {🟦} {🟥}
+[⬜] [⬜] [⬜] [⬜]
+[⬜] [⬜] [⬜] [⬜]
+`;
+
+exports[`selects unfilled balanced line 17`] = `0`;
+
+exports[`selects unfilled balanced line 18`] = `
+[⬜] {🟥} [⬜] [⬜]
+[⬜] {🟥} [⬜] [⬜]
+[⬜] {🟦} [⬜] [⬜]
+[⬜] {⬜} [⬜] [⬜]
+`;
+
+exports[`selects unfilled balanced line 19`] = `0`;
+
+exports[`selects unfilled balanced line 20`] = `
+[⬜] {⬜} [⬜] [⬜]
+[⬜] {🟥} [⬜] [⬜]
+[⬜] {🟦} [⬜] [⬜]
+[⬜] {🟥} [⬜] [⬜]
+`;

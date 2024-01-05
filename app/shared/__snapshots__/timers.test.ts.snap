@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`rejects if signal is aborted 1`] = `[AbortError: This operation was aborted]`;
+
+exports[`rejects if signal is already aborted 1`] = `[AbortError: This operation was aborted]`;
+
+exports[`resolves on timeout if signal is not provided 1`] = `undefined`;
+
+exports[`resolves on timeout if signal is not provided with value 1`] = `"value"`;
+
+exports[`resolves on timeout if signal is provided 1`] = `undefined`;
+
+exports[`resolves on timeout if signal is provided with value 1`] = `"value"`;

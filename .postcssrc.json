@@ -1,0 +1,7 @@
+{
+  "plugins": {
+    "@csstools/postcss-oklab-function": { "preserve": true },
+    "tailwindcss": {},
+    "autoprefixer": {}
+  }
+}

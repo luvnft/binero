@@ -1,0 +1,25 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`selects three or more identical sequential cells 1`] = `
+{
+  "cells": [
+    [🟥],
+    [🟥],
+    [🟥],
+  ],
+}
+`;
+
+exports[`selects three or more identical sequential cells 2`] = `
+{
+  "cells": [
+    [🟥],
+    [🟥],
+    [🟥],
+  ],
+}
+`;
+
+exports[`selects three or more identical sequential cells 3`] = `undefined`;
+
+exports[`selects three or more identical sequential cells 4`] = `undefined`;

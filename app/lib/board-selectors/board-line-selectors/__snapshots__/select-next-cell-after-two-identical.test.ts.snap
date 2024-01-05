@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`selects next cell after two identical 1`] = `
+{
+  "cell": [⬜],
+}
+`;
+
+exports[`selects next cell after two identical 2`] = `
+{
+  "cell": [⬜],
+}
+`;
+
+exports[`selects next cell after two identical 3`] = `undefined`;
+
+exports[`selects next cell after two identical 4`] = `undefined`;

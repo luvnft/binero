@@ -1,0 +1,91 @@
+import { Link } from '@remix-run/react';
+import { HelpCircle } from 'lucide-react';
+import { type ReactNode } from 'react';
+import { FormattedMessage } from 'react-intl';
+
+import { HistoryLink } from '~/components/base/history-link';
+import { Button } from '~/components/ui/button';
+import { GameBoardAnalyzerReview } from '~/components/ui/game-board-analyzer-review';
+import { GameBoardCell } from '~/components/ui/game-board-cell';
+import { GameBoardCellLock } from '~/components/ui/game-board-cell-lock';
+import { GameModalFooter } from '~/components/ui/game-modal-footer';
+import { GameModalHeader } from '~/components/ui/game-modal-header';
+import { type Board } from '~/lib/board';
+import { type BoardAnalyzerReview } from '~/lib/board-analyzer';
+import { type MatrixSelectionCoords } from '~/lib/matrix';
+import { getNextBoard } from '~/services/game';
+import { Random, sample } from '~/shared/random';
+
+import { PRAISE_MESSAGE_IDS } from './constants';
+
+export function GameTipContent({ boardAnalyzerReview }: { boardAnalyzerReview?: BoardAnalyzerReview }) {
+  return (
+    boardAnalyzerReview !== undefined && (
+      <GameBoardAnalyzerReview payload={boardAnalyzerReview.payload} reason={boardAnalyzerReview.reason} />
+    )
+  );
+}
+
+export function GameBoardContent({
+  board,
+  boardAnalyzerReviewPayloadData,
+  uncloak,
+}: {
+  board: Board;
+  boardAnalyzerReviewPayloadData: readonly MatrixSelectionCoords[];
+  uncloak: boolean;
+}) {
+  const children: ReactNode[] = [];
+
+  for (const [y, line] of board.entries()) {
+    for (const [x, cell] of line.entries()) {
+      const key = `${x}-${y}`;
+      const highlighted = boardAnalyzerReviewPayloadData.some((coords) => coords.x === x && coords.y === y);
+      const locked = cell.isFixed;
+
+      children.push(
+        <GameBoardCell asChild highlighted={highlighted} key={key} locked={locked} state={cell.state}>
+          {locked ? (
+            <HistoryLink preventScrollReset replace tabIndex={-1} to='.?uncloak'>
+              {uncloak && <GameBoardCellLock />}
+            </HistoryLink>
+          ) : (
+            <HistoryLink preventScrollReset replace to={`/game/${getNextBoard(board, { x, y }).toString()}`} />
+          )}
+        </GameBoardCell>,
+      );
+    }
+  }
+
+  return children;
+}
+
+export function GameActionsContent() {
+  return (
+    <HistoryLink replace to='.?analyze'>
+      <HelpCircle />
+    </HistoryLink>
+  );
+}
+
+export function GamePraiseModalContent({ seed, size }: { seed: number; size: number }) {
+  return (
+    <>
+      <GameModalHeader>
+        <FormattedMessage id={sample(PRAISE_MESSAGE_IDS, new Random(seed))} />
+      </GameModalHeader>
+      <GameModalFooter>
+        <Button asChild variant='primary'>
+          <HistoryLink prefetch='render' replace to={`/game/new/${size}`}>
+            <FormattedMessage id='gameAgainLink' />
+          </HistoryLink>
+        </Button>
+        <Button asChild variant='secondary'>
+          <Link replace to='/'>
+            <FormattedMessage id='gameMenuLink' />
+          </Link>
+        </Button>
+      </GameModalFooter>
+    </>
+  );
+}

@@ -1,0 +1,27 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`does not return value and throws if value does not satisfy predicate 1`] = `[AssertionError: Expected value to satisfy the predicate]`;
+
+exports[`does not return value and throws if value does not satisfy predicate with message 1`] = `[AssertionError: Message]`;
+
+exports[`does not return value and throws if value is "NaN" 1`] = `[AssertionError: Expected value not to be "NaN"]`;
+
+exports[`does not return value and throws if value is "NaN" with message 1`] = `[AssertionError: Message]`;
+
+exports[`does not return value and throws if value is "null" 1`] = `[AssertionError: Expected value to be defined]`;
+
+exports[`does not return value and throws if value is "null" with message 1`] = `[AssertionError: Message]`;
+
+exports[`does not return value and throws if value is "undefined" 1`] = `[AssertionError: Expected value to be defined]`;
+
+exports[`does not return value and throws if value is "undefined" with message 1`] = `[AssertionError: Message]`;
+
+exports[`returns value and does not throw if value is not "NaN" 1`] = `0`;
+
+exports[`returns value and does not throw if value is not "null" or "undefined" 1`] = `"value"`;
+
+exports[`returns value and does not throw if value is not "null" or "undefined" 2`] = `0`;
+
+exports[`returns value and does not throw if value is not "null" or "undefined" 3`] = `false`;
+
+exports[`returns value and does not throw if value satisfies predicate 1`] = `"value"`;

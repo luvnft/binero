@@ -1,0 +1,48 @@
+import { type RandomGenerator, uniformIntDistribution, xoroshiro128plus } from 'pure-rand';
+
+import { expectToBeDefined } from '~/shared/expect';
+
+export class Random {
+  #generator: RandomGenerator;
+  #seed: number;
+
+  constructor(seed: number) {
+    this.#generator = xoroshiro128plus(seed);
+    this.#seed = seed;
+  }
+
+  static create() {
+    return new this(Date.now() ^ (Math.random() * 0x100000000));
+  }
+
+  next(from: number, to: number) {
+    const [value, generator] = uniformIntDistribution(from, to, this.#generator);
+
+    this.#generator = generator;
+
+    return value;
+  }
+
+  get seed() {
+    return this.#seed;
+  }
+}
+
+export function shuffle<T>(target: readonly T[], random: Random) {
+  const items = [...target];
+
+  for (let prevIndex = 0; prevIndex < items.length; prevIndex++) {
+    const nextIndex = random.next(prevIndex, items.length - 1);
+    const prevItem = expectToBeDefined(items[prevIndex]);
+    const nextItem = expectToBeDefined(items[nextIndex]);
+
+    items[prevIndex] = nextItem;
+    items[nextIndex] = prevItem;
+  }
+
+  return items;
+}
+
+export function sample<T>(target: readonly T[], random: Random) {
+  return expectToBeDefined(target[random.next(0, target.length - 1)]);
+}

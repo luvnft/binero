@@ -1,0 +1,47 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`returns random array item 1`] = `8`;
+
+exports[`returns random array item 2`] = `3`;
+
+exports[`returns random number 1`] = `33`;
+
+exports[`returns random number 2`] = `-67`;
+
+exports[`returns random number 3`] = `-51`;
+
+exports[`returns seed 1`] = `-100`;
+
+exports[`returns seed 2`] = `0`;
+
+exports[`returns seed 3`] = `100`;
+
+exports[`returns shuffled array 1`] = `
+[
+  8,
+  5,
+  3,
+  4,
+  10,
+  6,
+  9,
+  2,
+  7,
+  1,
+]
+`;
+
+exports[`returns shuffled array 2`] = `
+[
+  3,
+  6,
+  8,
+  7,
+  1,
+  5,
+  2,
+  9,
+  4,
+  10,
+]
+`;

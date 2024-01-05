@@ -1,0 +1,41 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`returns matrix cells 1`] = `
+[
+  1,
+  1,
+  4,
+  5,
+  7,
+  9,
+]
+`;
+
+exports[`returns matrix cells 2`] = `
+[
+  1,
+  1,
+  4,
+  5,
+]
+`;
+
+exports[`returns matrix selection 1`] = `
+[
+  1,
+  1,
+  4,
+  5,
+  7,
+  9,
+]
+`;
+
+exports[`returns matrix selection 2`] = `
+[
+  1,
+  1,
+  4,
+  5,
+]
+`;

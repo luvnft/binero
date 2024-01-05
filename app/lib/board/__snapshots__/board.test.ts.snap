@@ -1,0 +1,373 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`replaces board cell at selection in board 1`] = `
+[🟦] [🟥] [🟦]
+[🟥] [🟦] [🟥]
+[🟥] [🟦] [⬜]
+`;
+
+exports[`replaces board cell at selection in board 2`] = `
+[⬜] [🟥] [🟦]
+[🟥] [🟦] [🟥]
+[🟥] [🟦] [🟦]
+`;
+
+exports[`replaces board cell at selection in board 3`] = `
+[🟦] [🟥] [🟦]
+[🟥] [⬜] [🟥]
+[🟥] [🟦] [🟦]
+`;
+
+exports[`replaces board cell at selection in board 4`] = `
+[🟦] [🟥] [🟦]
+[🟥] [🟦] [🟥]
+[🟥] [🟦] [🟦]
+`;
+
+exports[`replaces board line at index in board 1`] = `
+[🟦] [🟥] [🟦]
+[🟥] [🟦] [🟥]
+[⬜] [⬜] [⬜]
+`;
+
+exports[`replaces board line at index in board 2`] = `
+[⬜] [⬜] [⬜]
+[🟥] [🟦] [🟥]
+[🟥] [🟦] [🟦]
+`;
+
+exports[`replaces board line at index in board 3`] = `
+[🟦] [🟥] [🟦]
+[⬜] [⬜] [⬜]
+[🟥] [🟦] [🟦]
+`;
+
+exports[`replaces board line at index in board 4`] = `
+[🟦] [🟥] [🟦]
+[🟥] [🟦] [🟥]
+[⬜] [⬜] [⬜]
+`;
+
+exports[`returns blank board 1`] = `
+[⬜] [⬜] [⬜] [⬜]
+[⬜] [⬜] [⬜] [⬜]
+[⬜] [⬜] [⬜] [⬜]
+[⬜] [⬜] [⬜] [⬜]
+`;
+
+exports[`returns blank board 2`] = `
+[⬜] [⬜] [⬜] [⬜] [⬜] [⬜]
+[⬜] [⬜] [⬜] [⬜] [⬜] [⬜]
+[⬜] [⬜] [⬜] [⬜] [⬜] [⬜]
+[⬜] [⬜] [⬜] [⬜] [⬜] [⬜]
+[⬜] [⬜] [⬜] [⬜] [⬜] [⬜]
+[⬜] [⬜] [⬜] [⬜] [⬜] [⬜]
+`;
+
+exports[`returns blank board 3`] = `
+[⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜]
+[⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜]
+[⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜]
+[⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜]
+[⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜]
+[⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜]
+[⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜]
+[⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜]
+`;
+
+exports[`returns blank board 4`] = `
+[⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜]
+[⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜]
+[⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜]
+[⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜]
+[⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜]
+[⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜]
+[⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜]
+[⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜]
+[⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜]
+[⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜]
+`;
+
+exports[`returns board entries 1`] = `
+[
+  [
+    0,
+    [🟦] [🟥] [🟦] [🟥],
+  ],
+  [
+    1,
+    [🟥] [🟦] [🟥] [🟦],
+  ],
+  [
+    2,
+    [🟥] [🟦] [🟦] [🟥],
+  ],
+  [
+    3,
+    [🟦] [🟥] [🟥] [🟦],
+  ],
+]
+`;
+
+exports[`returns board entries 2`] = `
+[
+  [
+    0,
+    [🟦] [🟥] [🟦],
+  ],
+  [
+    1,
+    [🟥] [🟦] [🟥],
+  ],
+  [
+    2,
+    [🟥] [🟦] [🟦],
+  ],
+]
+`;
+
+exports[`returns board from states 1`] = `
+[🟦] [🟥] [🟦] [🟥]
+[🟥] [🟦] [🟥] [🟦]
+[🟥] [🟦] [🟦] [🟥]
+[🟦] [🟥] [🟥] [🟦]
+`;
+
+exports[`returns board from states 2`] = `
+[🟦] [🟥] [🟦]
+[🟥] [🟦] [🟥]
+[🟥] [🟦] [🟦]
+`;
+
+exports[`returns board from string 1`] = `
+[🟦] [🟥] [🟦] [🟥]
+[🟥] [🟦] [🟥] [🟦]
+[🟥] [🟦] [🟦] [🟥]
+[🟦] [🟥] [🟥] [🟦]
+`;
+
+exports[`returns board from string 2`] = `
+[🟦] [🟥] [🟦]
+[🟥] [🟦] [🟥]
+[🟥] [🟦] [🟦]
+`;
+
+exports[`returns board from value of 1`] = `
+[🟦] [🟥] [🟦] [🟥]
+[🟥] [🟦] [🟥] [🟦]
+[🟥] [🟦] [🟦] [🟥]
+[🟦] [🟥] [🟥] [🟦]
+`;
+
+exports[`returns board from value of 2`] = `
+[🟦] [🟥] [🟦]
+[🟥] [🟦] [🟥]
+[🟥] [🟦] [🟦]
+`;
+
+exports[`returns board iterator 1`] = `
+[
+  [🟦] [🟥] [🟦] [🟥],
+  [🟥] [🟦] [🟥] [🟦],
+  [🟥] [🟦] [🟦] [🟥],
+  [🟦] [🟥] [🟥] [🟦],
+]
+`;
+
+exports[`returns board iterator 2`] = `
+[
+  [🟦] [🟥] [🟦],
+  [🟥] [🟦] [🟥],
+  [🟥] [🟦] [🟦],
+]
+`;
+
+exports[`returns board length 1`] = `4`;
+
+exports[`returns board length 2`] = `3`;
+
+exports[`returns board line at index 1`] = `[🟥] [🟦] [🟦]`;
+
+exports[`returns board line at index 2`] = `[🟦] [🟥] [🟦]`;
+
+exports[`returns board line at index 3`] = `[🟥] [🟦] [🟥]`;
+
+exports[`returns board line at index 4`] = `[🟥] [🟦] [🟦]`;
+
+exports[`returns board line at index 5`] = `undefined`;
+
+exports[`returns board orientation 1`] = `1`;
+
+exports[`returns board orientation 2`] = `0`;
+
+exports[`returns board progress 1`] = `0`;
+
+exports[`returns board progress 2`] = `0.25`;
+
+exports[`returns board progress 3`] = `1`;
+
+exports[`returns board string 1`] = `"W1tbMSwwXSxbMSwxXSxbMSwwXSxbMSwxXV0sW1sxLDFdLFsxLDBdLFsxLDFdLFsxLDBdXSxbWzEsMV0sWzEsMF0sWzEsMF0sWzEsMV1dLFtbMSwwXSxbMSwxXSxbMSwxXSxbMSwwXV1d"`;
+
+exports[`returns board string 2`] = `"W1tbMSwwXSxbMSwxXSxbMSwwXV0sW1sxLDFdLFsxLDBdLFsxLDFdXSxbWzEsMV0sWzEsMF0sWzEsMF1dXQ=="`;
+
+exports[`returns board value of 1`] = `
+[
+  [
+    [
+      1,
+      0,
+    ],
+    [
+      1,
+      1,
+    ],
+    [
+      1,
+      0,
+    ],
+    [
+      1,
+      1,
+    ],
+  ],
+  [
+    [
+      1,
+      1,
+    ],
+    [
+      1,
+      0,
+    ],
+    [
+      1,
+      1,
+    ],
+    [
+      1,
+      0,
+    ],
+  ],
+  [
+    [
+      1,
+      1,
+    ],
+    [
+      1,
+      0,
+    ],
+    [
+      1,
+      0,
+    ],
+    [
+      1,
+      1,
+    ],
+  ],
+  [
+    [
+      1,
+      0,
+    ],
+    [
+      1,
+      1,
+    ],
+    [
+      1,
+      1,
+    ],
+    [
+      1,
+      0,
+    ],
+  ],
+]
+`;
+
+exports[`returns board value of 2`] = `
+[
+  [
+    [
+      1,
+      0,
+    ],
+    [
+      1,
+      1,
+    ],
+    [
+      1,
+      0,
+    ],
+  ],
+  [
+    [
+      1,
+      1,
+    ],
+    [
+      1,
+      0,
+    ],
+    [
+      1,
+      1,
+    ],
+  ],
+  [
+    [
+      1,
+      1,
+    ],
+    [
+      1,
+      0,
+    ],
+    [
+      1,
+      0,
+    ],
+  ],
+]
+`;
+
+exports[`reverses board 1`] = `
+[🟦] [🟥] [🟥] [🟦]
+[🟥] [🟦] [🟦] [🟥]
+[🟥] [🟦] [🟥] [🟦]
+[🟦] [🟥] [🟦] [🟥]
+`;
+
+exports[`reverses board 2`] = `1`;
+
+exports[`reverses board 3`] = `
+[🟥] [🟦] [🟦]
+[🟥] [🟦] [🟥]
+[🟦] [🟥] [🟦]
+`;
+
+exports[`reverses board 4`] = `1`;
+
+exports[`rotates board 1`] = `
+[🟦] [🟥] [🟥] [🟦]
+[🟥] [🟦] [🟦] [🟥]
+[🟦] [🟥] [🟦] [🟥]
+[🟥] [🟦] [🟥] [🟦]
+`;
+
+exports[`rotates board 2`] = `0`;
+
+exports[`rotates board 3`] = `
+[🟦] [🟥] [🟥]
+[🟥] [🟦] [🟦]
+[🟦] [🟥] [🟦]
+`;
+
+exports[`rotates board 4`] = `0`;
+
+exports[`rotates board 5`] = ``;
+
+exports[`rotates board 6`] = `0`;

@@ -1,0 +1,106 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`returns "false" if board cell is not empty 1`] = `false`;
+
+exports[`returns "false" if board cell is not empty 2`] = `false`;
+
+exports[`returns "false" if board cell is not filled 1`] = `false`;
+
+exports[`returns "false" if board cell is not fixed 1`] = `false`;
+
+exports[`returns "false" if board cell is not fixed 2`] = `false`;
+
+exports[`returns "false" if board cell is not fixed 3`] = `false`;
+
+exports[`returns "false" if one board cell is not equal to other 1`] = `false`;
+
+exports[`returns "false" if one board cell is not equal to other 2`] = `false`;
+
+exports[`returns "false" if one board cell is not equal to other 3`] = `false`;
+
+exports[`returns "false" if one board cell is not equal to other 4`] = `false`;
+
+exports[`returns "false" if one board cell is not equal to other 5`] = `false`;
+
+exports[`returns "false" if one board cell is not equal to other 6`] = `false`;
+
+exports[`returns "true" if board cell is empty 1`] = `true`;
+
+exports[`returns "true" if board cell is filled 1`] = `true`;
+
+exports[`returns "true" if board cell is filled 2`] = `true`;
+
+exports[`returns "true" if board cell is fixed 1`] = `true`;
+
+exports[`returns "true" if board cell is fixed 2`] = `true`;
+
+exports[`returns "true" if board cell is fixed 3`] = `true`;
+
+exports[`returns "true" if one board cell is equal to other 1`] = `true`;
+
+exports[`returns "true" if one board cell is equal to other 2`] = `true`;
+
+exports[`returns "true" if one board cell is equal to other 3`] = `true`;
+
+exports[`returns board cell balance 1`] = `-1`;
+
+exports[`returns board cell balance 2`] = `0`;
+
+exports[`returns board cell balance 3`] = `1`;
+
+exports[`returns board cell from state 1`] = `[🟦]`;
+
+exports[`returns board cell from state 2`] = `[⬜]`;
+
+exports[`returns board cell from state 3`] = `[🟥]`;
+
+exports[`returns board cell from value of 1`] = `[🟦]`;
+
+exports[`returns board cell from value of 2`] = `[⬜]`;
+
+exports[`returns board cell from value of 3`] = `[🟥]`;
+
+exports[`returns board cell state 1`] = `0`;
+
+exports[`returns board cell state 2`] = `2`;
+
+exports[`returns board cell state 3`] = `1`;
+
+exports[`returns board cell value of 1`] = `
+[
+  1,
+  0,
+]
+`;
+
+exports[`returns board cell value of 2`] = `
+[
+  1,
+  2,
+]
+`;
+
+exports[`returns board cell value of 3`] = `
+[
+  1,
+  1,
+]
+`;
+
+exports[`returns fixed board cell 1`] = `{🟦}`;
+
+exports[`returns fixed board cell 2`] = `{⬜}`;
+
+exports[`returns fixed board cell 3`] = `{🟥}`;
+
+exports[`returns next board cell 1`] = `[⬜]`;
+
+exports[`returns next board cell 2`] = `[🟥]`;
+
+exports[`returns next board cell 3`] = `[🟦]`;
+
+exports[`returns next board cell 4`] = `{⬜}`;
+
+exports[`returns next board cell 5`] = `{🟥}`;
+
+exports[`returns next board cell 6`] = `{🟦}`;

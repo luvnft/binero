@@ -1,0 +1,207 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`returns "false" if board line is not empty 1`] = `false`;
+
+exports[`returns "false" if board line is not empty 2`] = `false`;
+
+exports[`returns "false" if board line is not filled 1`] = `false`;
+
+exports[`returns "false" if board line is not filled 2`] = `false`;
+
+exports[`returns "false" if one board line is not equal to other 1`] = `false`;
+
+exports[`returns "false" if one board line is not equal to other 2`] = `false`;
+
+exports[`returns "false" if one board line is not include other 1`] = `false`;
+
+exports[`returns "false" if one board line is not include other 2`] = `false`;
+
+exports[`returns "false" if one board line is not include other 3`] = `false`;
+
+exports[`returns "true" if board line is empty 1`] = `true`;
+
+exports[`returns "true" if board line is empty 2`] = `true`;
+
+exports[`returns "true" if board line is filled 1`] = `true`;
+
+exports[`returns "true" if board line is filled 2`] = `true`;
+
+exports[`returns "true" if one board line is equal to other 1`] = `true`;
+
+exports[`returns "true" if one board line is equal to other 2`] = `true`;
+
+exports[`returns "true" if one board line is include other 1`] = `true`;
+
+exports[`returns "true" if one board line is include other 2`] = `true`;
+
+exports[`returns blank board line 1`] = `[⬜] [⬜] [⬜] [⬜]`;
+
+exports[`returns blank board line 2`] = `[⬜] [⬜] [⬜] [⬜] [⬜] [⬜]`;
+
+exports[`returns blank board line 3`] = `[⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜]`;
+
+exports[`returns blank board line 4`] = `[⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜] [⬜]`;
+
+exports[`returns board cell at index 1`] = `[⬜]`;
+
+exports[`returns board cell at index 2`] = `[🟦]`;
+
+exports[`returns board cell at index 3`] = `[🟥]`;
+
+exports[`returns board cell at index 4`] = `[⬜]`;
+
+exports[`returns board cell at index 5`] = `undefined`;
+
+exports[`returns board cell index of 1`] = `2`;
+
+exports[`returns board cell index of 2`] = `0`;
+
+exports[`returns board cell index of 3`] = `1`;
+
+exports[`returns board cell index of 4`] = `2`;
+
+exports[`returns board from states 1`] = `[🟦] [🟦] [🟥] [⬜]`;
+
+exports[`returns board from states 2`] = `[🟦] [🟥] [⬜]`;
+
+exports[`returns board from value of 1`] = `[🟦] [🟦] [🟥] [⬜]`;
+
+exports[`returns board from value of 2`] = `[🟦] [🟥] [⬜]`;
+
+exports[`returns board line balance 1`] = `0`;
+
+exports[`returns board line balance 2`] = `0`;
+
+exports[`returns board line balance 3`] = `2`;
+
+exports[`returns board line balance 4`] = `-2`;
+
+exports[`returns board line entries 1`] = `
+[
+  [
+    0,
+    [🟦],
+  ],
+  [
+    1,
+    [🟦],
+  ],
+  [
+    2,
+    [🟥],
+  ],
+  [
+    3,
+    [⬜],
+  ],
+]
+`;
+
+exports[`returns board line entries 2`] = `
+[
+  [
+    0,
+    [🟦],
+  ],
+  [
+    1,
+    [🟥],
+  ],
+  [
+    2,
+    [⬜],
+  ],
+]
+`;
+
+exports[`returns board line iterator 1`] = `
+[
+  [🟦],
+  [🟦],
+  [🟥],
+  [⬜],
+]
+`;
+
+exports[`returns board line iterator 2`] = `
+[
+  [🟦],
+  [🟥],
+  [⬜],
+]
+`;
+
+exports[`returns board line keys 1`] = `
+[
+  0,
+  1,
+  2,
+  3,
+]
+`;
+
+exports[`returns board line keys 2`] = `
+[
+  0,
+  1,
+  2,
+]
+`;
+
+exports[`returns board line length 1`] = `4`;
+
+exports[`returns board line length 2`] = `3`;
+
+exports[`returns board line progress 1`] = `0`;
+
+exports[`returns board line progress 2`] = `0.5`;
+
+exports[`returns board line progress 3`] = `1`;
+
+exports[`returns board line value of 1`] = `
+[
+  [
+    1,
+    0,
+  ],
+  [
+    1,
+    0,
+  ],
+  [
+    1,
+    1,
+  ],
+  [
+    1,
+    2,
+  ],
+]
+`;
+
+exports[`returns board line value of 2`] = `
+[
+  [
+    1,
+    0,
+  ],
+  [
+    1,
+    1,
+  ],
+  [
+    1,
+    2,
+  ],
+]
+`;
+
+exports[`returns length of board state in board line 1`] = `1`;
+
+exports[`returns length of board state in board line 2`] = `1`;
+
+exports[`returns length of board state in board line 3`] = `2`;
+
+exports[`rotates board line 1`] = `[⬜] [🟥] [🟦] [🟦]`;
+
+exports[`rotates board line 2`] = `[⬜] [🟥] [🟦]`;

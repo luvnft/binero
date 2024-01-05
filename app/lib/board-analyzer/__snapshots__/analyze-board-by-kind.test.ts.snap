@@ -1,0 +1,81 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`analyzes board by kind 1`] = `undefined`;
+
+exports[`analyzes board by kind 2`] = `
+{
+  "payload": {
+    "data": [
+      {
+        "x": 0,
+        "y": 1,
+      },
+      {
+        "x": 0,
+        "y": 2,
+      },
+      {
+        "x": 0,
+        "y": 3,
+      },
+    ],
+    "orientation": 0,
+  },
+  "reason": 7,
+}
+`;
+
+exports[`analyzes board by kind 3`] = `
+{
+  "payload": {
+    "data": [
+      {
+        "x": 0,
+        "y": 1,
+      },
+    ],
+    "orientation": 0,
+  },
+  "reason": 6,
+}
+`;
+
+exports[`analyzes board by kind 4`] = `undefined`;
+
+exports[`analyzes board by kind 5`] = `
+{
+  "payload": {
+    "data": [
+      {
+        "x": 0,
+        "y": 3,
+      },
+      {
+        "x": 0,
+        "y": 4,
+      },
+      {
+        "x": 0,
+        "y": 5,
+      },
+    ],
+    "orientation": 0,
+  },
+  "reason": 7,
+}
+`;
+
+exports[`analyzes board by kind 6`] = `
+{
+  "payload": {
+    "data": [
+      {
+        "x": 4,
+        "y": 0,
+      },
+    ],
+    "orientation": 1,
+  },
+  "reason": 6,
+}
+`;

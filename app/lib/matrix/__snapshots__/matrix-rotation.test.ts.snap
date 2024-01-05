@@ -1,0 +1,41 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`double rotates 1`] = `
+Target {
+  "name": "target",
+}
+`;
+
+exports[`double rotates 2`] = `
+Target {
+  "name": "rotated target",
+}
+`;
+
+exports[`double rotates 3`] = `null`;
+
+exports[`quadruple rotates 1`] = `
+Target {
+  "name": "target",
+}
+`;
+
+exports[`quadruple rotates 2`] = `
+Target {
+  "name": "reversed target",
+}
+`;
+
+exports[`quadruple rotates 3`] = `
+Target {
+  "name": "rotated target",
+}
+`;
+
+exports[`quadruple rotates 4`] = `
+Target {
+  "name": "reversed rotated target",
+}
+`;
+
+exports[`quadruple rotates 5`] = `null`;

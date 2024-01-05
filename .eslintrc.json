@@ -1,0 +1,46 @@
+{
+  "overrides": [
+    {
+      "files": ["*.js", "*.ts", "*.tsx"],
+      "extends": ["eslint:recommended", "plugin:perfectionist/recommended-natural"],
+      "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": "latest"
+      },
+      "env": {
+        "browser": true,
+        "node": true
+      }
+    },
+    {
+      "files": ["*.js"],
+      "extends": ["plugin:prettier/recommended"]
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": [
+        "plugin:@typescript-eslint/strict-type-checked",
+        "plugin:@typescript-eslint/stylistic-type-checked",
+        "plugin:react-hooks/recommended",
+        "plugin:react/recommended",
+        "plugin:react/jsx-runtime",
+        "plugin:jsx-a11y/strict",
+        "plugin:prettier/recommended"
+      ],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "project": true
+      },
+      "settings": {
+        "react": {
+          "version": "detect"
+        }
+      },
+      "rules": {
+        "@typescript-eslint/array-type": ["error", { "default": "array-simple" }],
+        "@typescript-eslint/consistent-type-imports": ["error", { "fixStyle": "inline-type-imports" }],
+        "@typescript-eslint/no-throw-literal": ["error", { "allowThrowingUnknown": true }]
+      }
+    }
+  ]
+}
