@@ -11,7 +11,7 @@ runs:
       shell: sh
 
     - name: Restore cache
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: ${{ env.cache_path }}
         key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
