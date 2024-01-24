@@ -91,8 +91,8 @@ export default function Route() {
                 ))}
               </SettingsMenuGroup>
             </SettingsMenu>
-            <MenuGroup>
-              <MenuButtonItem noscript variant='primary'>
+            <MenuGroup scripting='none'>
+              <MenuButtonItem variant='primary'>
                 <FormattedMessage id='menuSettingsSaveButton' />
               </MenuButtonItem>
             </MenuGroup>
