@@ -1,4 +1,10 @@
-import { type LoaderFunctionArgs, type MetaArgs, type MetaDescriptor, json } from '@remix-run/node';
+import {
+  type LinkDescriptor,
+  type LoaderFunctionArgs,
+  type MetaArgs,
+  type MetaDescriptor,
+  json,
+} from '@remix-run/node';
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData } from '@remix-run/react';
 import { IntlProvider } from 'react-intl';
 
@@ -36,6 +42,15 @@ export function meta({ data }: MetaArgs<typeof loader>): MetaDescriptor[] {
   return [{ title: data.meta.title }, { content: data.meta.description, name: 'description' }];
 }
 
+export function links(): LinkDescriptor[] {
+  return [
+    { href: '/manifest.webmanifest', rel: 'manifest' },
+    { href: '/favicon.ico', rel: 'icon', sizes: '64x64' },
+    { href: '/favicon.svg', rel: 'icon', type: 'image/svg+xml' },
+    { href: '/apple-touch-icon.png', rel: 'apple-touch-icon' },
+  ];
+}
+
 export default function Root() {
   const { appearance, intl } = useLoaderData<typeof loader>();
 
@@ -44,10 +59,6 @@ export default function Root() {
       <head>
         <meta charSet='utf-8' />
         <meta content='width=device-width, initial-scale=1' name='viewport' />
-        <link href='/manifest.webmanifest' rel='manifest' />
-        <link href='/favicon.ico' rel='icon' sizes='64x64' />
-        <link href='/favicon.svg' rel='icon' type='image/svg+xml' />
-        <link href='/apple-touch-icon.png' rel='apple-touch-icon' />
         <Meta />
         <Links />
       </head>
