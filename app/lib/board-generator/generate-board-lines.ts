@@ -15,7 +15,7 @@ function isValidBoardLine(target: BoardLine) {
 
 export function generateBoardLines(size: number) {
   const lines: BoardLine[] = [];
-  const n = Math.pow(2, size);
+  const n = 2 ** size;
 
   for (let index = 0; index < n; index++) {
     const line = new BoardLine(
