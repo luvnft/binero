@@ -13,7 +13,7 @@ export function expectToBeDefined<T>(value: T, message?: string) {
 }
 
 export function expectNotToBeNaN(value: number, message?: string) {
-  assert(!isNaN(value), message ?? 'Expected value not to be "NaN"');
+  assert(!Number.isNaN(value), message ?? 'Expected value not to be "NaN"');
 
   return value;
 }
