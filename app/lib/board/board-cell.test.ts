@@ -1,15 +1,15 @@
 import { expect, test } from 'vitest';
 
-import { BoardCell, BoardCellKind, type BoardCellPair, BoardCellState } from './board-cell';
+import { BoardCell, BoardCellKind, BoardCellState, type BoardCellValue } from './board-cell';
 
 test.each([BoardCellState.B, BoardCellState.E, BoardCellState.R])('returns board cell from state', (state) => {
   expect(BoardCell.create(state)).toMatchSnapshot();
 });
 
 test.each([
-  [[BoardCellKind.Regular, BoardCellState.B] as BoardCellPair],
-  [[BoardCellKind.Regular, BoardCellState.E] as BoardCellPair],
-  [[BoardCellKind.Regular, BoardCellState.R] as BoardCellPair],
+  [[BoardCellKind.Regular, BoardCellState.B] as BoardCellValue],
+  [[BoardCellKind.Regular, BoardCellState.E] as BoardCellValue],
+  [[BoardCellKind.Regular, BoardCellState.R] as BoardCellValue],
 ])('returns board cell from value of', (value) => {
   expect(BoardCell.from(value)).toMatchSnapshot();
 });

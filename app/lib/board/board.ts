@@ -9,8 +9,8 @@ import {
 import { assert } from '~/shared/assert';
 import { expectToBeDefined } from '~/shared/expect';
 
-import { type BoardCell, type BoardCellPair, type BoardCellState } from './board-cell';
-import { BoardLine } from './board-line';
+import { type BoardCell, type BoardCellState } from './board-cell';
+import { BoardLine, type BoardLineValue } from './board-line';
 
 export enum BoardOrientation {
   Landscape = 0,
@@ -21,6 +21,8 @@ const NEXT_BOARD_ORIENTATION_BY_PREV_BOARD_ORIENTATION: Readonly<Record<BoardOri
   [BoardOrientation.Landscape]: BoardOrientation.Portrait,
   [BoardOrientation.Portrait]: BoardOrientation.Landscape,
 };
+
+export type BoardValue = readonly BoardLineValue[];
 
 export class Board implements Iterable<BoardLine>, Matrix<BoardLine>, MatrixRotatable<Board>, MatrixReversible<Board> {
   readonly #lines: readonly BoardLine[];
@@ -49,7 +51,7 @@ export class Board implements Iterable<BoardLine>, Matrix<BoardLine>, MatrixRota
     );
   }
 
-  static from(value: ReadonlyArray<readonly BoardCellPair[]>) {
+  static from(value: BoardValue) {
     return new this(
       BoardOrientation.Portrait,
       value.map((value) => BoardLine.from(value)),
@@ -57,7 +59,7 @@ export class Board implements Iterable<BoardLine>, Matrix<BoardLine>, MatrixRota
   }
 
   static parse(value: string) {
-    return this.from(JSON.parse(atob(value)) as ReadonlyArray<readonly BoardCellPair[]>);
+    return this.from(JSON.parse(atob(value)) as BoardValue);
   }
 
   [Symbol.iterator]() {
@@ -138,7 +140,7 @@ export class Board implements Iterable<BoardLine>, Matrix<BoardLine>, MatrixRota
     return btoa(JSON.stringify(this.valueOf()));
   }
 
-  valueOf() {
+  valueOf(): BoardValue {
     return this.#lines.map((line) => line.valueOf());
   }
 

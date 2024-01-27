@@ -1,7 +1,9 @@
 import { DoubleMatrixRotation, type MatrixLine, type MatrixRotatable } from '~/lib/matrix';
 import { expectToBeDefined } from '~/shared/expect';
 
-import { BoardCell, type BoardCellPair, BoardCellState } from './board-cell';
+import { BoardCell, BoardCellState, type BoardCellValue } from './board-cell';
+
+export type BoardLineValue = readonly BoardCellValue[];
 
 export class BoardLine implements Iterable<BoardCell>, MatrixLine<BoardCell>, MatrixRotatable<BoardLine> {
   readonly #cells: readonly BoardCell[];
@@ -18,7 +20,7 @@ export class BoardLine implements Iterable<BoardCell>, MatrixLine<BoardCell>, Ma
     return new this(states.map((state) => BoardCell.create(state)));
   }
 
-  static from(value: readonly BoardCellPair[]) {
+  static from(value: BoardLineValue) {
     return new this(value.map((value) => BoardCell.from(value)));
   }
 
@@ -74,7 +76,7 @@ export class BoardLine implements Iterable<BoardCell>, MatrixLine<BoardCell>, Ma
     return DoubleMatrixRotation.run<BoardLine>(this);
   }
 
-  valueOf() {
+  valueOf(): BoardLineValue {
     return this.#cells.map((cell) => cell.valueOf());
   }
 

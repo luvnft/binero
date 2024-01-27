@@ -2,8 +2,8 @@ import { expect, test, vi } from 'vitest';
 
 import { MatrixSelection } from '~/lib/matrix';
 
-import { Board, BoardOrientation } from './board';
-import { type BoardCell, BoardCellKind, type BoardCellPair, BoardCellState } from './board-cell';
+import { Board, BoardOrientation, type BoardValue } from './board';
+import { type BoardCell, BoardCellKind, BoardCellState } from './board-cell';
 import { BoardLine } from './board-line';
 
 test.each([4, 6, 8, 10])('returns blank board', (size) => {
@@ -34,49 +34,49 @@ test.each([
   [
     [
       [
-        [BoardCellKind.Regular, BoardCellState.B] as BoardCellPair,
-        [BoardCellKind.Regular, BoardCellState.R] as BoardCellPair,
-        [BoardCellKind.Regular, BoardCellState.B] as BoardCellPair,
-        [BoardCellKind.Regular, BoardCellState.R] as BoardCellPair,
+        [BoardCellKind.Regular, BoardCellState.B],
+        [BoardCellKind.Regular, BoardCellState.R],
+        [BoardCellKind.Regular, BoardCellState.B],
+        [BoardCellKind.Regular, BoardCellState.R],
       ],
       [
-        [BoardCellKind.Regular, BoardCellState.R] as BoardCellPair,
-        [BoardCellKind.Regular, BoardCellState.B] as BoardCellPair,
-        [BoardCellKind.Regular, BoardCellState.R] as BoardCellPair,
-        [BoardCellKind.Regular, BoardCellState.B] as BoardCellPair,
+        [BoardCellKind.Regular, BoardCellState.R],
+        [BoardCellKind.Regular, BoardCellState.B],
+        [BoardCellKind.Regular, BoardCellState.R],
+        [BoardCellKind.Regular, BoardCellState.B],
       ],
       [
-        [BoardCellKind.Regular, BoardCellState.R] as BoardCellPair,
-        [BoardCellKind.Regular, BoardCellState.B] as BoardCellPair,
-        [BoardCellKind.Regular, BoardCellState.B] as BoardCellPair,
-        [BoardCellKind.Regular, BoardCellState.R] as BoardCellPair,
+        [BoardCellKind.Regular, BoardCellState.R],
+        [BoardCellKind.Regular, BoardCellState.B],
+        [BoardCellKind.Regular, BoardCellState.B],
+        [BoardCellKind.Regular, BoardCellState.R],
       ],
       [
-        [BoardCellKind.Regular, BoardCellState.B] as BoardCellPair,
-        [BoardCellKind.Regular, BoardCellState.R] as BoardCellPair,
-        [BoardCellKind.Regular, BoardCellState.R] as BoardCellPair,
-        [BoardCellKind.Regular, BoardCellState.B] as BoardCellPair,
+        [BoardCellKind.Regular, BoardCellState.B],
+        [BoardCellKind.Regular, BoardCellState.R],
+        [BoardCellKind.Regular, BoardCellState.R],
+        [BoardCellKind.Regular, BoardCellState.B],
       ],
-    ],
+    ] as BoardValue,
   ],
   [
     [
       [
-        [BoardCellKind.Regular, BoardCellState.B] as BoardCellPair,
-        [BoardCellKind.Regular, BoardCellState.R] as BoardCellPair,
-        [BoardCellKind.Regular, BoardCellState.B] as BoardCellPair,
+        [BoardCellKind.Regular, BoardCellState.B],
+        [BoardCellKind.Regular, BoardCellState.R],
+        [BoardCellKind.Regular, BoardCellState.B],
       ],
       [
-        [BoardCellKind.Regular, BoardCellState.R] as BoardCellPair,
-        [BoardCellKind.Regular, BoardCellState.B] as BoardCellPair,
-        [BoardCellKind.Regular, BoardCellState.R] as BoardCellPair,
+        [BoardCellKind.Regular, BoardCellState.R],
+        [BoardCellKind.Regular, BoardCellState.B],
+        [BoardCellKind.Regular, BoardCellState.R],
       ],
       [
-        [BoardCellKind.Regular, BoardCellState.R] as BoardCellPair,
-        [BoardCellKind.Regular, BoardCellState.B] as BoardCellPair,
-        [BoardCellKind.Regular, BoardCellState.B] as BoardCellPair,
+        [BoardCellKind.Regular, BoardCellState.R],
+        [BoardCellKind.Regular, BoardCellState.B],
+        [BoardCellKind.Regular, BoardCellState.B],
       ],
-    ],
+    ] as BoardValue,
   ],
 ])('returns board from value of', (value) => {
   expect(Board.from(value)).toMatchSnapshot();

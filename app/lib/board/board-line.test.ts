@@ -1,7 +1,7 @@
 import { assert, expect, test } from 'vitest';
 
-import { BoardCellKind, type BoardCellPair, BoardCellState } from './board-cell';
-import { BoardLine } from './board-line';
+import { BoardCellKind, BoardCellState } from './board-cell';
+import { BoardLine, type BoardLineValue } from './board-line';
 
 test.each([4, 6, 8, 10])('returns blank board line', (size) => {
   expect(BoardLine.blank(size)).toMatchSnapshot();
@@ -17,18 +17,18 @@ test.each([
 test.each([
   [
     [
-      [BoardCellKind.Regular, BoardCellState.B] as BoardCellPair,
-      [BoardCellKind.Regular, BoardCellState.B] as BoardCellPair,
-      [BoardCellKind.Regular, BoardCellState.R] as BoardCellPair,
-      [BoardCellKind.Regular, BoardCellState.E] as BoardCellPair,
-    ],
+      [BoardCellKind.Regular, BoardCellState.B],
+      [BoardCellKind.Regular, BoardCellState.B],
+      [BoardCellKind.Regular, BoardCellState.R],
+      [BoardCellKind.Regular, BoardCellState.E],
+    ] as BoardLineValue,
   ],
   [
     [
-      [BoardCellKind.Regular, BoardCellState.B] as BoardCellPair,
-      [BoardCellKind.Regular, BoardCellState.R] as BoardCellPair,
-      [BoardCellKind.Regular, BoardCellState.E] as BoardCellPair,
-    ],
+      [BoardCellKind.Regular, BoardCellState.B],
+      [BoardCellKind.Regular, BoardCellState.R],
+      [BoardCellKind.Regular, BoardCellState.E],
+    ] as BoardLineValue,
   ],
 ])('returns board from value of', (value) => {
   expect(BoardLine.from(value)).toMatchSnapshot();

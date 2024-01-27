@@ -21,7 +21,7 @@ const BALANCE_BY_BOARD_CELL_STATE: Readonly<Record<BoardCellState, number>> = {
   [BoardCellState.R]: 1,
 };
 
-export type BoardCellPair = readonly [BoardCellKind, BoardCellState];
+export type BoardCellValue = readonly [kind: BoardCellKind, state: BoardCellState];
 
 export class BoardCell {
   readonly #kind: BoardCellKind;
@@ -36,7 +36,7 @@ export class BoardCell {
     return new this(BoardCellKind.Regular, state);
   }
 
-  static from(value: BoardCellPair) {
+  static from(value: BoardCellValue) {
     return new this(value[0], value[1]);
   }
 
@@ -52,8 +52,8 @@ export class BoardCell {
     return new BoardCell(BoardCellKind.Fixed, this.#state);
   }
 
-  valueOf() {
-    return [this.#kind, this.#state] as BoardCellPair;
+  valueOf(): BoardCellValue {
+    return [this.#kind, this.#state];
   }
 
   get balance() {

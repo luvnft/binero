@@ -1,4 +1,4 @@
-import { Board, type BoardCellPair } from '~/lib/board';
+import { Board, type BoardValue } from '~/lib/board';
 import * as BoardAnalyzer from '~/lib/board-analyzer';
 import * as BoardGenerator from '~/lib/board-generator';
 import { MatrixSelection, type MatrixSelectionCoords } from '~/lib/matrix';
@@ -35,7 +35,7 @@ export function parseBoard(value: string) {
   return Board.parse(value);
 }
 
-export function getBoard(value: ReadonlyArray<readonly BoardCellPair[]>) {
+export function getBoard(value: BoardValue) {
   return Board.from(value);
 }
 
