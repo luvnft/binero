@@ -84,8 +84,5 @@ jobs:
 
           npx esbuild index.js --outfile=.vercel/output/functions/index.func/index.js --define:process.env.NODE_ENV='"production"' --alias:@remix-run/node=@vercel/remix --bundle --minify --format=esm
 
-      - name: Setup Vercel
-        run: npm i -g vercel@33.1.0
-
       - name: Vercel deploy
-        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: npx vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
