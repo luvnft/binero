@@ -1,0 +1,73 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`returns pushed referrer resolved path 1`] = `
+{
+  "hash": "",
+  "pathname": "/game",
+  "search": "?referrer=%2F",
+}
+`;
+
+exports[`returns pushed referrer resolved path 2`] = `
+{
+  "hash": "",
+  "pathname": "/game/new/2",
+  "search": "?referrer=%2Fgame%3Freferrer%3D%252F",
+}
+`;
+
+exports[`returns pushed referrer resolved path 3`] = `
+{
+  "hash": "",
+  "pathname": "/settings",
+  "search": "?referrer=%2Fgame%2FW1tbMSwyXSxbMSwyXV0sW1swLDBdLFswLDFdXV0%3D%3Freferrer%3D%252Fgame%253Freferrer%253D%25252F",
+}
+`;
+
+exports[`returns pushed referrer resolved path 4`] = `
+{
+  "hash": "",
+  "pathname": "/game",
+  "search": "?referrer=%2F",
+}
+`;
+
+exports[`returns pushed referrer resolved path 5`] = `
+{
+  "hash": "",
+  "pathname": "/game/new/2",
+  "search": "?referrer=%2Fgame%3Freferrer%3D%252F",
+}
+`;
+
+exports[`returns pushed referrer resolved path 6`] = `
+{
+  "hash": "",
+  "pathname": "/settings",
+  "search": "?referrer=%2Fgame%2FW1tbMSwyXSxbMSwyXV0sW1swLDBdLFswLDFdXV0%3D%3Freferrer%3D%252Fgame%253Freferrer%253D%25252F",
+}
+`;
+
+exports[`returns pushed referrer resolved path 7`] = `
+{
+  "hash": "",
+  "pathname": "/game",
+  "search": "?referrer=%2F",
+}
+`;
+
+exports[`returns pushed referrer resolved path 8`] = `
+{
+  "hash": "",
+  "pathname": "/game/new/2",
+  "search": "?referrer=%2Fgame%3Freferrer%3D%252F",
+}
+`;
+
+exports[`returns pushed referrer resolved path 9`] = `
+{
+  "hash": "",
+  "pathname": "/settings",
+  "search": "?referrer=%2Fgame%2FW1tbMSwyXSxbMSwyXV0sW1swLDBdLFswLDFdXV0%3D%3Freferrer%3D%252Fgame%253Freferrer%253D%25252F",
+}
+`;

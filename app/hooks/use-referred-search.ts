@@ -9,7 +9,9 @@ export function useReferredSearch(search: string, referrerPath: Partial<Path> | 
       searchParams.set('referrer', createPath(referrerPath));
     }
 
-    return searchParams.toString();
+    const searchParamsString = searchParams.toString();
+
+    return searchParamsString === '' ? searchParamsString : `?${searchParamsString}`;
   }, [referrerPath, search]);
 
   return referredSearch;

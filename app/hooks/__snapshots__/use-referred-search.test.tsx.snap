@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`returns referred search 1`] = `""`;
+
+exports[`returns referred search 2`] = `"?referrer=%2F"`;
+
+exports[`returns referred search 3`] = `"?referrer=%2Fgame%3Freferrer%3D%252F"`;
+
+exports[`returns referred search 4`] = `"?analyze="`;
+
+exports[`returns referred search 5`] = `"?analyze=&referrer=%2Fgame%3Freferrer%3D%252F"`;

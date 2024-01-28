@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`returns referrer path 1`] = `null`;
+
+exports[`returns referrer path 2`] = `
+{
+  "pathname": "/",
+}
+`;
+
+exports[`returns referrer path 3`] = `
+{
+  "pathname": "/game",
+  "search": "?referrer=%2F",
+}
+`;
+
+exports[`returns referrer path 4`] = `
+{
+  "pathname": "/game/W1tbMSwyXSxbMSwyXV0sW1swLDBdLFswLDFdXV0=",
+  "search": "?referrer=%2Fgame%3Freferrer%3D%252F",
+}
+`;
