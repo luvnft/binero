@@ -75,10 +75,7 @@ export class Board implements Iterable<BoardLine>, Matrix<BoardLine>, MatrixRota
   }
 
   replace(index: number, callback: (line: BoardLine) => BoardLine) {
-    return new Board(
-      this.#orientation,
-      this.#lines.toSpliced(index, 1, callback(expectToBeDefined(this.#lines.at(index)))),
-    );
+    return new Board(this.#orientation, this.#lines.with(index, callback(expectToBeDefined(this.#lines.at(index)))));
   }
 
   replaceBy(selection: MatrixSelection, callback: (cell: BoardCell) => BoardCell) {
