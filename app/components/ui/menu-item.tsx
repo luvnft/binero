@@ -4,10 +4,18 @@ import { Button, type ButtonVariant } from '~/components/ui/button';
 
 export type MenuItemVariant = ButtonVariant;
 
-export function MenuItem({ children, variant }: { children: ReactNode; variant: MenuItemVariant }) {
+export function MenuItem({
+  children,
+  loading,
+  variant,
+}: {
+  children: ReactNode;
+  loading?: boolean;
+  variant: MenuItemVariant;
+}) {
   return (
     <li className='flex'>
-      <Button asChild variant={variant}>
+      <Button asChild loading={loading} variant={variant}>
         {children}
       </Button>
     </li>

@@ -1,0 +1,140 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders slot 1`] = `
+<DocumentFragment>
+  <span>
+    Foo
+    <span>
+      Bar
+    </span>
+  </span>
+</DocumentFragment>
+`;
+
+exports[`renders slot 2`] = `
+<DocumentFragment>
+  <span
+    class="slot"
+  >
+    Foo
+    <span>
+      Bar
+    </span>
+  </span>
+</DocumentFragment>
+`;
+
+exports[`renders slot 3`] = `
+<DocumentFragment>
+  <span
+    class="slot foo"
+  >
+    Foo
+    <span>
+      Bar
+    </span>
+  </span>
+</DocumentFragment>
+`;
+
+exports[`renders slot 4`] = `
+<DocumentFragment>
+  <span
+    data-slot="slot"
+  >
+    Foo
+    <span>
+      Bar
+    </span>
+  </span>
+</DocumentFragment>
+`;
+
+exports[`renders slot 5`] = `
+<DocumentFragment>
+  <span
+    data-foo="foo"
+    data-slot="slot"
+  >
+    Foo
+    <span>
+      Bar
+    </span>
+  </span>
+</DocumentFragment>
+`;
+
+exports[`renders slot 6`] = `
+<DocumentFragment>
+  <span>
+    Foo
+    <span>
+      Bar
+    </span>
+  </span>
+</DocumentFragment>
+`;
+
+exports[`renders slot 7`] = `
+<DocumentFragment>
+  <span>
+    Foo
+    <span>
+      Bar
+    </span>
+  </span>
+</DocumentFragment>
+`;
+
+exports[`renders slot 8`] = `
+<DocumentFragment>
+  <span
+    class="slot"
+  >
+    Foo
+    <span>
+      Bar
+    </span>
+  </span>
+</DocumentFragment>
+`;
+
+exports[`renders slot 9`] = `
+<DocumentFragment>
+  <span
+    class="slot foo"
+  >
+    Foo
+    <span>
+      Bar
+    </span>
+  </span>
+</DocumentFragment>
+`;
+
+exports[`renders slot 10`] = `
+<DocumentFragment>
+  <span
+    data-slot="slot"
+  >
+    Foo
+    <span>
+      Bar
+    </span>
+  </span>
+</DocumentFragment>
+`;
+
+exports[`renders slot 11`] = `
+<DocumentFragment>
+  <span
+    data-foo="foo"
+    data-slot="slot"
+  >
+    Foo
+    <span>
+      Bar
+    </span>
+  </span>
+</DocumentFragment>
+`;
