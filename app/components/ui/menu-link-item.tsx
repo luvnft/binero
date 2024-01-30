@@ -1,3 +1,4 @@
+import { useNavigation, useResolvedPath } from '@remix-run/react';
 import { type ReactNode } from 'react';
 
 import { HistoryLink } from '~/components/base/history-link';
@@ -8,19 +9,24 @@ export type MenuLinkItemVariant = ButtonVariant;
 
 export function MenuLinkItem({
   children,
-  loading,
   to,
   variant,
 }: {
   children: ReactNode;
-  loading?: boolean;
   to: string;
   variant: MenuLinkItemVariant;
 }) {
+  const navigation = useNavigation();
+  const path = useResolvedPath(to);
+
   return (
     <MenuItem>
-      <Button asChild loading={loading} variant={variant}>
-        <HistoryLink prefetch='render' to={to}>
+      <Button
+        asChild
+        loading={navigation.state === 'loading' && navigation.location.pathname === path.pathname}
+        variant={variant}
+      >
+        <HistoryLink prefetch='render' to={path}>
           {children}
         </HistoryLink>
       </Button>
