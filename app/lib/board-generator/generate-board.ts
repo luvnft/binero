@@ -65,14 +65,14 @@ export async function generateBoard(size: number, progress: number, random: Rand
   } while (index < size);
 
   do {
-    const selection = new MatrixSelection([
-      {
-        x: random.next(0, size - 1),
-        y: random.next(0, size - 1),
-      },
-    ]);
+    const x = random.next(0, size - 1);
+    const y = random.next(0, size - 1);
 
-    board = board.replaceBy(selection, () => BoardCell.create(BoardCellState.E));
+    if (expectToBeDefined(expectToBeDefined(board.at(y)).at(x)).isEmpty) {
+      continue;
+    }
+
+    board = board.replaceBy(new MatrixSelection([{ x, y }]), () => BoardCell.create(BoardCellState.E));
   } while (board.progress > progress);
 
   return board;
