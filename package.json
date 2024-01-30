@@ -11,6 +11,7 @@
     "start": "remix-serve ./build/server/index.js",
     "lint": "eslint --ignore-path ./.gitignore --report-unused-disable-directives .",
     "type-check": "tsc",
+    "bench": "vitest bench",
     "test": "vitest"
   },
   "dependencies": {
