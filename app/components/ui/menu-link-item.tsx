@@ -1,7 +1,10 @@
 import { type ReactNode } from 'react';
 
 import { HistoryLink } from '~/components/base/history-link';
-import { MenuItem, type MenuItemVariant } from '~/components/ui/menu-item';
+import { Button, type ButtonVariant } from '~/components/ui/button';
+import { MenuItem } from '~/components/ui/menu-item';
+
+export type MenuLinkItemVariant = ButtonVariant;
 
 export function MenuLinkItem({
   children,
@@ -12,13 +15,15 @@ export function MenuLinkItem({
   children: ReactNode;
   loading?: boolean;
   to: string;
-  variant: MenuItemVariant;
+  variant: MenuLinkItemVariant;
 }) {
   return (
-    <MenuItem loading={loading} variant={variant}>
-      <HistoryLink prefetch='render' to={to}>
-        {children}
-      </HistoryLink>
+    <MenuItem>
+      <Button asChild loading={loading} variant={variant}>
+        <HistoryLink prefetch='render' to={to}>
+          {children}
+        </HistoryLink>
+      </Button>
     </MenuItem>
   );
 }

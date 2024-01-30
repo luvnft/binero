@@ -1,11 +1,14 @@
 import { type ReactNode } from 'react';
 
-import { MenuItem, type MenuItemVariant } from '~/components/ui/menu-item';
+import { Button, type ButtonVariant } from '~/components/ui/button';
+import { MenuItem } from '~/components/ui/menu-item';
 
-export function MenuButtonItem({ children, variant }: { children: ReactNode; variant: MenuItemVariant }) {
+export type MenuButtonItemVariant = ButtonVariant;
+
+export function MenuButtonItem({ children, variant }: { children: ReactNode; variant: MenuButtonItemVariant }) {
   return (
-    <MenuItem variant={variant}>
-      <button>{children}</button>
+    <MenuItem>
+      <Button variant={variant}>{children}</Button>
     </MenuItem>
   );
 }
