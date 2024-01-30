@@ -2,7 +2,7 @@ export interface Abortable {
   signal?: AbortSignal;
 }
 
-export async function setTimeout<T = void>(delay?: number, value?: T, options?: Abortable) {
+export async function setImmediate<T = void>(value?: T, options?: Abortable) {
   let resolve!: (value: T) => void;
   let reject!: (reason: unknown) => void;
 
@@ -14,7 +14,7 @@ export async function setTimeout<T = void>(delay?: number, value?: T, options?: 
   });
 
   if (signal === undefined) {
-    globalThis.setTimeout(resolve, delay, ...args);
+    globalThis.setImmediate<T[]>(resolve, ...args);
     return await promise;
   }
 
@@ -24,13 +24,13 @@ export async function setTimeout<T = void>(delay?: number, value?: T, options?: 
   }
 
   const handleAbort = () => {
-    globalThis.clearTimeout(handle);
+    globalThis.clearImmediate(handle);
     reject(signal.reason);
   };
 
   signal.addEventListener('abort', handleAbort);
 
-  const handle = globalThis.setTimeout(resolve, delay, ...args);
+  const handle = globalThis.setImmediate<T[]>(resolve, ...args);
 
   try {
     return await promise;

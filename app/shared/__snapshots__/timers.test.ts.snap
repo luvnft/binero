@@ -4,10 +4,10 @@ exports[`rejects if signal is aborted 1`] = `[AbortError: This operation was abo
 
 exports[`rejects if signal is already aborted 1`] = `[AbortError: This operation was aborted]`;
 
-exports[`resolves on timeout if signal is not provided 1`] = `undefined`;
+exports[`resolves on immediate if signal is not provided 1`] = `undefined`;
 
-exports[`resolves on timeout if signal is not provided with value 1`] = `"value"`;
+exports[`resolves on immediate if signal is not provided with value 1`] = `"value"`;
 
-exports[`resolves on timeout if signal is provided 1`] = `undefined`;
+exports[`resolves on immediate if signal is provided 1`] = `undefined`;
 
-exports[`resolves on timeout if signal is provided with value 1`] = `"value"`;
+exports[`resolves on immediate if signal is provided with value 1`] = `"value"`;

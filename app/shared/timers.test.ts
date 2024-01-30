@@ -2,30 +2,30 @@
 
 import { expect, test, vi } from 'vitest';
 
-import { setTimeout } from './timers';
+import { setImmediate } from './timers';
 
-test('resolves on timeout if signal is not provided', () => {
-  const promise = setTimeout(10);
-
-  expect(promise).resolves.toMatchSnapshot();
-});
-
-test('resolves on timeout if signal is not provided with value', () => {
-  const promise = setTimeout(10, 'value');
+test('resolves on immediate if signal is not provided', () => {
+  const promise = setImmediate();
 
   expect(promise).resolves.toMatchSnapshot();
 });
 
-test('resolves on timeout if signal is provided', () => {
-  const promise = setTimeout(10, undefined, {
+test('resolves on immediate if signal is not provided with value', () => {
+  const promise = setImmediate('value');
+
+  expect(promise).resolves.toMatchSnapshot();
+});
+
+test('resolves on immediate if signal is provided', () => {
+  const promise = setImmediate(undefined, {
     signal: new AbortController().signal,
   });
 
   expect(promise).resolves.toMatchSnapshot();
 });
 
-test('resolves on timeout if signal is provided with value', () => {
-  const promise = setTimeout(10, 'value', {
+test('resolves on immediate if signal is provided with value', () => {
+  const promise = setImmediate('value', {
     signal: new AbortController().signal,
   });
 
@@ -34,7 +34,7 @@ test('resolves on timeout if signal is provided with value', () => {
 
 test('rejects if signal is aborted', () => {
   const controller = new AbortController();
-  const promise = setTimeout(10, undefined, {
+  const promise = setImmediate(undefined, {
     signal: controller.signal,
   });
 
@@ -43,10 +43,10 @@ test('rejects if signal is aborted', () => {
   expect(promise).rejects.toMatchSnapshot();
 });
 
-test('clears timeout if signal is aborted', async () => {
+test('clears immediate if signal is aborted', async () => {
   const controller = new AbortController();
-  const clearTimeoutMock = vi.spyOn(globalThis, 'clearTimeout');
-  const promise = setTimeout(10, undefined, {
+  const clearImmediateMock = vi.spyOn(globalThis, 'clearImmediate');
+  const promise = setImmediate(undefined, {
     signal: controller.signal,
   });
 
@@ -56,20 +56,20 @@ test('clears timeout if signal is aborted', async () => {
     await promise;
   } catch {}
 
-  expect(clearTimeoutMock).toHaveBeenCalledOnce();
+  expect(clearImmediateMock).toHaveBeenCalledOnce();
 });
 
 test('rejects if signal is already aborted', () => {
-  const promise = setTimeout(10, undefined, {
+  const promise = setImmediate(undefined, {
     signal: AbortSignal.abort(),
   });
 
   expect(promise).rejects.toMatchSnapshot();
 });
 
-test('does not clear timeout if signal is already aborted', async () => {
-  const clearTimeoutMock = vi.spyOn(globalThis, 'clearTimeout');
-  const promise = setTimeout(10, undefined, {
+test('does not clear immediate if signal is already aborted', async () => {
+  const clearImmediateMock = vi.spyOn(globalThis, 'clearImmediate');
+  const promise = setImmediate(undefined, {
     signal: AbortSignal.abort(),
   });
 
@@ -77,12 +77,12 @@ test('does not clear timeout if signal is already aborted', async () => {
     await promise;
   } catch {}
 
-  expect(clearTimeoutMock).not.toBeCalled();
+  expect(clearImmediateMock).not.toBeCalled();
 });
 
-test('does not set timeout if signal is already aborted', async () => {
-  const setTimeoutMock = vi.spyOn(globalThis, 'setTimeout');
-  const promise = setTimeout(10, undefined, {
+test('does not set immediate if signal is already aborted', async () => {
+  const setImmediateMock = vi.spyOn(globalThis, 'setImmediate');
+  const promise = setImmediate(undefined, {
     signal: AbortSignal.abort(),
   });
 
@@ -90,5 +90,5 @@ test('does not set timeout if signal is already aborted', async () => {
     await promise;
   } catch {}
 
-  expect(setTimeoutMock).not.toBeCalled();
+  expect(setImmediateMock).not.toBeCalled();
 });
