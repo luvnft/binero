@@ -3,12 +3,13 @@ import { useLoaderData } from '@remix-run/react';
 import { FormattedMessage } from 'react-intl';
 
 import { BrandLogo } from '~/components/ui/brand-logo';
+import { ButtonLink } from '~/components/ui/button-link';
 import { Layout } from '~/components/ui/layout';
 import { LayoutContent } from '~/components/ui/layout-content';
 import { LayoutHeader } from '~/components/ui/layout-header';
 import { Menu } from '~/components/ui/menu';
 import { MenuGroup } from '~/components/ui/menu-group';
-import { MenuLinkItem } from '~/components/ui/menu-link-item';
+import { MenuItem } from '~/components/ui/menu-item';
 import { BoardCellState } from '~/lib/board';
 import { getGame } from '~/services/game.server';
 import { getSession } from '~/services/session.server';
@@ -42,13 +43,17 @@ export default function Route() {
           <BrandLogo states={states} />
           <MenuGroup>
             {board !== null && (
-              <MenuLinkItem to={`/game/${board}`} variant='primary'>
-                <FormattedMessage id='menuGameContinueLink' />
-              </MenuLinkItem>
+              <MenuItem>
+                <ButtonLink prefetch='render' to={`/game/${board}`} variant='primary'>
+                  <FormattedMessage id='menuGameContinueLink' />
+                </ButtonLink>
+              </MenuItem>
             )}
-            <MenuLinkItem to='/game' variant={board === null ? 'primary' : 'secondary'}>
-              <FormattedMessage id='menuGameLink' />
-            </MenuLinkItem>
+            <MenuItem>
+              <ButtonLink prefetch='render' to='/game' variant={board === null ? 'primary' : 'secondary'}>
+                <FormattedMessage id='menuGameLink' />
+              </ButtonLink>
+            </MenuItem>
           </MenuGroup>
         </Menu>
       </LayoutContent>

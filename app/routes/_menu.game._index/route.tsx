@@ -1,12 +1,13 @@
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 
+import { ButtonLink } from '~/components/ui/button-link';
 import { Layout } from '~/components/ui/layout';
 import { LayoutContent } from '~/components/ui/layout-content';
 import { LayoutHeader } from '~/components/ui/layout-header';
 import { Menu } from '~/components/ui/menu';
 import { MenuGroup } from '~/components/ui/menu-group';
-import { MenuLinkItem } from '~/components/ui/menu-link-item';
+import { MenuItem } from '~/components/ui/menu-item';
 import { getErrorResponse } from '~/shared/http';
 
 export function loader() {
@@ -27,9 +28,11 @@ export default function Route() {
         <Menu>
           <MenuGroup>
             {sizes.map((size) => (
-              <MenuLinkItem key={size} to={`/game/new/${size}`} variant='secondary'>
-                {size}
-              </MenuLinkItem>
+              <MenuItem key={size}>
+                <ButtonLink prefetch='render' to={`/game/new/${size}`} variant='secondary'>
+                  {size}
+                </ButtonLink>
+              </MenuItem>
             ))}
           </MenuGroup>
         </Menu>

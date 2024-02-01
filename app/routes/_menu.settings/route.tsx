@@ -3,12 +3,13 @@ import { Form, useLoaderData, useSubmit } from '@remix-run/react';
 import { type FormEvent } from 'react';
 import { FormattedMessage } from 'react-intl';
 
+import { Button } from '~/components/ui/button';
 import { Layout } from '~/components/ui/layout';
 import { LayoutContent } from '~/components/ui/layout-content';
 import { LayoutHeader } from '~/components/ui/layout-header';
 import { Menu } from '~/components/ui/menu';
-import { MenuButtonItem } from '~/components/ui/menu-button-item';
 import { MenuGroup } from '~/components/ui/menu-group';
+import { MenuItem } from '~/components/ui/menu-item';
 import { SettingsMenu } from '~/components/ui/settings-menu';
 import { SettingsMenuGroup } from '~/components/ui/settings-menu-group';
 import { SettingsMenuRadioItem } from '~/components/ui/settings-menu-radio-item';
@@ -92,9 +93,11 @@ export default function Route() {
               </SettingsMenuGroup>
             </SettingsMenu>
             <MenuGroup scripting='none'>
-              <MenuButtonItem variant='primary'>
-                <FormattedMessage id='menuSettingsSaveButton' />
-              </MenuButtonItem>
+              <MenuItem>
+                <Button variant='primary'>
+                  <FormattedMessage id='menuSettingsSaveButton' />
+                </Button>
+              </MenuItem>
             </MenuGroup>
           </Form>
         </Menu>

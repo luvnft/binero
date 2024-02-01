@@ -16,6 +16,8 @@ function HistoryReplaceLink({ relative, to, ...props }: ComponentProps<typeof Li
   return <Link {...props} replace to={replacedReferrerResolvedPath} />;
 }
 
+export type HistoryLinkPrefetch = 'intent' | 'none' | 'render' | 'viewport';
+
 export function HistoryLink({ replace, ...props }: ComponentProps<typeof Link>) {
   return replace ? <HistoryReplaceLink {...props} /> : <HistoryPushLink {...props} />;
 }

@@ -1,10 +1,9 @@
-import { Link } from '@remix-run/react';
 import { HelpCircle } from 'lucide-react';
 import { type ReactNode } from 'react';
 import { FormattedMessage } from 'react-intl';
 
 import { HistoryLink } from '~/components/base/history-link';
-import { Button } from '~/components/ui/button';
+import { ButtonLink } from '~/components/ui/button-link';
 import { GameBoardAnalyzerReview } from '~/components/ui/game-board-analyzer-review';
 import { GameBoardCell } from '~/components/ui/game-board-cell';
 import { GameBoardCellLock } from '~/components/ui/game-board-cell-lock';
@@ -75,16 +74,12 @@ export function GamePraiseModalContent({ seed, size }: { seed: number; size: num
         <FormattedMessage id={sample(PRAISE_MESSAGE_IDS, new Random(seed))} />
       </GameModalHeader>
       <GameModalFooter>
-        <Button asChild variant='primary'>
-          <HistoryLink prefetch='render' replace to={`/game/new/${size}`}>
-            <FormattedMessage id='gameAgainLink' />
-          </HistoryLink>
-        </Button>
-        <Button asChild variant='secondary'>
-          <Link replace to='/'>
-            <FormattedMessage id='gameMenuLink' />
-          </Link>
-        </Button>
+        <ButtonLink prefetch='render' replace to={`/game/new/${size}`} variant='primary'>
+          <FormattedMessage id='gameAgainLink' />
+        </ButtonLink>
+        <ButtonLink history={false} replace to='/' variant='secondary'>
+          <FormattedMessage id='gameMenuLink' />
+        </ButtonLink>
       </GameModalFooter>
     </>
   );
