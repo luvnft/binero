@@ -24,12 +24,12 @@ export default {
               r: { DEFAULT: harmony.red[600], focus: harmony.red[400], highlight: harmony.red[500] },
             },
             primary: {
-              DEFAULT: harmony.purple[600],
+              DEFAULT: harmony.purple[700],
               content: harmony.purple[100],
             },
             secondary: {
               DEFAULT: harmony.purple[300],
-              content: harmony.purple[800],
+              content: harmony.purple[900],
             },
           },
         },
@@ -55,12 +55,12 @@ export default {
               r: { DEFAULT: harmony.red[500], focus: harmony.red[700], highlight: harmony.red[600] },
             },
             primary: {
-              DEFAULT: harmony.purple[400],
+              DEFAULT: harmony.purple[300],
               content: harmony.purple[900],
             },
             secondary: {
               DEFAULT: harmony.purple[700],
-              content: harmony.purple[200],
+              content: harmony.purple[100],
             },
           },
         },
