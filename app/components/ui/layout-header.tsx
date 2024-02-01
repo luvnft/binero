@@ -1,8 +1,8 @@
-import { Link, useLocation, useResolvedPath } from '@remix-run/react';
+import { useLocation, useResolvedPath } from '@remix-run/react';
 import { ChevronLeft, Settings2 } from 'lucide-react';
 import { type ReactNode } from 'react';
 
-import { HistoryLink } from '~/components/base/history-link';
+import { ButtonLink } from '~/components/ui/button-link';
 import { useReferrerPath } from '~/hooks/use-referrer-path';
 
 export function LayoutHeader({ children }: { children?: ReactNode }) {
@@ -14,17 +14,17 @@ export function LayoutHeader({ children }: { children?: ReactNode }) {
     <header className='grid h-14 grid-cols-3'>
       <div className='flex items-center'>
         {location.pathname !== parentPath.pathname && (
-          <Link replace to={referrerPath ?? parentPath}>
-            <ChevronLeft className='size-5' />
-          </Link>
+          <ButtonLink history={false} replace size='icon' to={referrerPath ?? parentPath} variant='ghost'>
+            <ChevronLeft />
+          </ButtonLink>
         )}
       </div>
       <div className='m-auto'>{children}</div>
       <div className='flex items-center justify-end'>
         {location.pathname !== '/settings' && (
-          <HistoryLink to='/settings'>
-            <Settings2 className='size-5' />
-          </HistoryLink>
+          <ButtonLink size='icon' to='/settings' variant='ghost'>
+            <Settings2 />
+          </ButtonLink>
         )}
       </div>
     </header>

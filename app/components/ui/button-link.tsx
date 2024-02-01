@@ -1,10 +1,12 @@
-import { Link, useNavigation, useResolvedPath } from '@remix-run/react';
+import { Link, type Path, useNavigation, useResolvedPath } from '@remix-run/react';
 import { type ReactNode } from 'react';
 
 import { HistoryLink, type HistoryLinkPrefetch } from '~/components/base/history-link';
-import { Button, type ButtonVariant } from '~/components/ui/button';
+import { Button, type ButtonSize, type ButtonVariant } from '~/components/ui/button';
 
 export type ButtonLinkVariant = ButtonVariant;
+
+export type ButtonLinkSize = ButtonSize;
 
 export type ButtonLinkPrefetch = HistoryLinkPrefetch;
 
@@ -13,6 +15,7 @@ export function ButtonLink({
   history = true,
   prefetch,
   replace,
+  size,
   to,
   variant,
 }: {
@@ -20,7 +23,8 @@ export function ButtonLink({
   history?: boolean;
   prefetch?: ButtonLinkPrefetch;
   replace?: boolean;
-  to: string;
+  size?: ButtonLinkSize;
+  to: Partial<Path> | string;
   variant: ButtonLinkVariant;
 }) {
   const navigation = useNavigation();
@@ -31,6 +35,7 @@ export function ButtonLink({
     <Button
       asChild
       loading={navigation.state === 'loading' && navigation.location.pathname === path.pathname}
+      size={size}
       variant={variant}
     >
       <Component prefetch={prefetch} replace={replace} to={path}>

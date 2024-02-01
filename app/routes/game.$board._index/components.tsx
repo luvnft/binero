@@ -61,9 +61,9 @@ export function GameBoardContent({
 
 export function GameActionsContent() {
   return (
-    <HistoryLink replace to='.?analyze'>
+    <ButtonLink replace size='icon' to='.?analyze' variant='ghost'>
       <HelpCircle />
-    </HistoryLink>
+    </ButtonLink>
   );
 }
 
