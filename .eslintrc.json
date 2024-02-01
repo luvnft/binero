@@ -39,7 +39,23 @@
       "rules": {
         "@typescript-eslint/array-type": ["error", { "default": "array-simple" }],
         "@typescript-eslint/consistent-type-imports": ["error", { "fixStyle": "inline-type-imports" }],
-        "@typescript-eslint/no-throw-literal": ["error", { "allowThrowingUnknown": true }]
+        "@typescript-eslint/no-throw-literal": ["error", { "allowThrowingUnknown": true }],
+        "perfectionist/sort-imports": [
+          "error",
+          {
+            "groups": [
+              "type",
+              ["builtin", "external"],
+              "side-effect",
+              "internal-type",
+              "internal",
+              ["parent-type", "sibling-type", "index-type"],
+              ["parent", "sibling", "index"],
+              "object",
+              "unknown"
+            ]
+          }
+        ]
       }
     }
   ]

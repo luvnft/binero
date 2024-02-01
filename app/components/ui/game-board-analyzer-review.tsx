@@ -76,9 +76,5 @@ export function GameBoardAnalyzerReview({
 }) {
   const Message = MESSAGE_BY_BOARD_ANALYZER_REVIEW_REASON[reason];
 
-  return (
-    <span className='text-balance text-center text-xl'>
-      <Message orientation={payload.orientation} />
-    </span>
-  );
+  return <Message orientation={payload.orientation} />;
 }

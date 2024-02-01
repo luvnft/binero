@@ -1,15 +1,11 @@
 import { type LoaderFunctionArgs, json } from '@remix-run/node';
 import { type ClientLoaderFunctionArgs, useLoaderData, useLocation, useParams } from '@remix-run/react';
-import { FormattedNumber } from 'react-intl';
 
 import { Game } from '~/components/ui/game';
 import { GameActions } from '~/components/ui/game-actions';
 import { GameBoard } from '~/components/ui/game-board';
 import { GameModal } from '~/components/ui/game-modal';
 import { GameTip } from '~/components/ui/game-tip';
-import { Layout } from '~/components/ui/layout';
-import { LayoutContent } from '~/components/ui/layout-content';
-import { LayoutHeader } from '~/components/ui/layout-header';
 import { analyzeBoard, isBoardSolved, parseBoard } from '~/services/game';
 import { setGame } from '~/services/game.server';
 import { commitSession, getSession } from '~/services/session.server';
@@ -59,32 +55,25 @@ export default function Route() {
   const boardAnalyzerReviewPayloadData = boardAnalyzerReview?.payload.data ?? [];
 
   return (
-    <Layout>
-      <LayoutHeader>
-        <FormattedNumber style='percent' value={board.progress} />
-      </LayoutHeader>
-      <LayoutContent>
-        <Game>
-          <GameTip>
-            <GameTipContent boardAnalyzerReview={boardAnalyzerReview} />
-          </GameTip>
-          <GameBoard size={boardSize}>
-            <GameBoardContent
-              board={board}
-              boardAnalyzerReviewPayloadData={boardAnalyzerReviewPayloadData}
-              uncloak={searchParams.has('uncloak')}
-            />
-          </GameBoard>
-          <GameActions>
-            <GameActionsContent />
-          </GameActions>
-          {boardSolved && (
-            <GameModal>
-              <GamePraiseModalContent seed={seed} size={boardSize} />
-            </GameModal>
-          )}
-        </Game>
-      </LayoutContent>
-    </Layout>
+    <Game>
+      <GameTip>
+        <GameTipContent boardAnalyzerReview={boardAnalyzerReview} progress={board.progress} />
+      </GameTip>
+      <GameBoard size={boardSize}>
+        <GameBoardContent
+          board={board}
+          boardAnalyzerReviewPayloadData={boardAnalyzerReviewPayloadData}
+          uncloak={searchParams.has('uncloak')}
+        />
+      </GameBoard>
+      <GameActions>
+        <GameActionsContent />
+      </GameActions>
+      {boardSolved && (
+        <GameModal>
+          <GamePraiseModalContent seed={seed} size={boardSize} />
+        </GameModal>
+      )}
+    </Game>
   );
 }

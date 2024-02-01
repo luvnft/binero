@@ -1,6 +1,7 @@
 import { expect } from 'vitest';
 
 import '~/globals';
+
 import { Board, BoardCell, BoardCellState, BoardLine } from '~/lib/board';
 
 const BOARD_CELL_CONTENT_BY_BOARD_CELL_STATE: Readonly<Record<BoardCellState, string>> = {

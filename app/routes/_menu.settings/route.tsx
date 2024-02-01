@@ -4,9 +4,6 @@ import { type FormEvent } from 'react';
 import { FormattedMessage } from 'react-intl';
 
 import { Button } from '~/components/ui/button';
-import { Layout } from '~/components/ui/layout';
-import { LayoutContent } from '~/components/ui/layout-content';
-import { LayoutHeader } from '~/components/ui/layout-header';
 import { Menu } from '~/components/ui/menu';
 import { MenuGroup } from '~/components/ui/menu-group';
 import { MenuItem } from '~/components/ui/menu-item';
@@ -61,47 +58,42 @@ export default function Route() {
   }
 
   return (
-    <Layout>
-      <LayoutHeader />
-      <LayoutContent>
-        <Menu asChild>
-          <Form method='post' onChange={handleChange}>
-            <SettingsMenu>
-              <SettingsMenuGroup legend={<FormattedMessage id='menuSettingsLanguageLegend' />}>
-                {LOCALES.map((locale) => (
-                  <SettingsMenuRadioItem
-                    defaultChecked={locale === selectedLocale}
-                    key={locale}
-                    name='locale'
-                    value={locale}
-                  >
-                    {MESSAGE_RAW_BY_LOCALE[locale]}
-                  </SettingsMenuRadioItem>
-                ))}
-              </SettingsMenuGroup>
-              <SettingsMenuGroup legend={<FormattedMessage id='menuSettingsAppearanceLegend' />}>
-                {APPEARANCES.map((appearance) => (
-                  <SettingsMenuRadioItem
-                    defaultChecked={appearance === selectedAppearance}
-                    key={appearance}
-                    name='appearance'
-                    value={appearance}
-                  >
-                    <FormattedMessage id={MESSAGE_ID_BY_APPEARANCE[appearance]} />
-                  </SettingsMenuRadioItem>
-                ))}
-              </SettingsMenuGroup>
-            </SettingsMenu>
-            <MenuGroup scripting='none'>
-              <MenuItem>
-                <Button variant='primary'>
-                  <FormattedMessage id='menuSettingsSaveButton' />
-                </Button>
-              </MenuItem>
-            </MenuGroup>
-          </Form>
-        </Menu>
-      </LayoutContent>
-    </Layout>
+    <Menu asChild>
+      <Form method='post' onChange={handleChange}>
+        <SettingsMenu>
+          <SettingsMenuGroup legend={<FormattedMessage id='menuSettingsLanguageLegend' />}>
+            {LOCALES.map((locale) => (
+              <SettingsMenuRadioItem
+                defaultChecked={locale === selectedLocale}
+                key={locale}
+                name='locale'
+                value={locale}
+              >
+                {MESSAGE_RAW_BY_LOCALE[locale]}
+              </SettingsMenuRadioItem>
+            ))}
+          </SettingsMenuGroup>
+          <SettingsMenuGroup legend={<FormattedMessage id='menuSettingsAppearanceLegend' />}>
+            {APPEARANCES.map((appearance) => (
+              <SettingsMenuRadioItem
+                defaultChecked={appearance === selectedAppearance}
+                key={appearance}
+                name='appearance'
+                value={appearance}
+              >
+                <FormattedMessage id={MESSAGE_ID_BY_APPEARANCE[appearance]} />
+              </SettingsMenuRadioItem>
+            ))}
+          </SettingsMenuGroup>
+        </SettingsMenu>
+        <MenuGroup scripting='none'>
+          <MenuItem>
+            <Button variant='primary'>
+              <FormattedMessage id='menuSettingsSaveButton' />
+            </Button>
+          </MenuItem>
+        </MenuGroup>
+      </Form>
+    </Menu>
   );
 }

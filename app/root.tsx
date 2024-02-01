@@ -10,6 +10,10 @@ import { IntlProvider } from 'react-intl';
 
 import '~/globals';
 import '~/globals.css';
+
+import { Layout } from '~/components/ui/layout';
+import { LayoutContent } from '~/components/ui/layout-content';
+import { LayoutHeader } from '~/components/ui/layout-header';
 import { getAppearance } from '~/services/appearance.server';
 import { type Messages } from '~/services/intl';
 import { getIntl } from '~/services/intl.server';
@@ -64,7 +68,12 @@ export default function Root() {
       </head>
       <body className='h-dvh bg-base-100 text-base-content'>
         <IntlProvider locale={intl.locale} messages={intl.messages}>
-          <Outlet />
+          <Layout>
+            <LayoutHeader />
+            <LayoutContent>
+              <Outlet />
+            </LayoutContent>
+          </Layout>
         </IntlProvider>
         <ScrollRestoration />
         <Scripts />

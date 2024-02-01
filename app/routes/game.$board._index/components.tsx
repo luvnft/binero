@@ -1,6 +1,6 @@
 import { HelpCircle } from 'lucide-react';
 import { type ReactNode } from 'react';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, FormattedNumber } from 'react-intl';
 
 import { HistoryLink } from '~/components/base/history-link';
 import { ButtonLink } from '~/components/ui/button-link';
@@ -17,12 +17,18 @@ import { Random, sample } from '~/shared/random';
 
 import { PRAISE_MESSAGE_IDS } from './constants';
 
-export function GameTipContent({ boardAnalyzerReview }: { boardAnalyzerReview?: BoardAnalyzerReview }) {
-  return (
-    boardAnalyzerReview !== undefined && (
-      <GameBoardAnalyzerReview payload={boardAnalyzerReview.payload} reason={boardAnalyzerReview.reason} />
-    )
-  );
+export function GameTipContent({
+  boardAnalyzerReview,
+  progress,
+}: {
+  boardAnalyzerReview?: BoardAnalyzerReview;
+  progress: number;
+}) {
+  if (boardAnalyzerReview === undefined) {
+    return <FormattedNumber style='percent' value={progress} />;
+  }
+
+  return <GameBoardAnalyzerReview payload={boardAnalyzerReview.payload} reason={boardAnalyzerReview.reason} />;
 }
 
 export function GameBoardContent({
