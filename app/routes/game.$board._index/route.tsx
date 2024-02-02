@@ -1,4 +1,4 @@
-import { type LoaderFunctionArgs, json } from '@remix-run/cloudflare';
+import { type LoaderFunctionArgs, json } from '@remix-run/node';
 import { type ClientLoaderFunctionArgs, useLoaderData, useLocation, useParams } from '@remix-run/react';
 
 import { Game } from '~/components/ui/game';

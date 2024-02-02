@@ -8,7 +8,7 @@
   "scripts": {
     "build": "remix vite:build",
     "dev": "remix vite:dev",
-    "start": "wrangler pages dev ./build/client",
+    "start": "remix-serve ./build/server/index.js",
     "lint": "eslint --ignore-path ./.gitignore --report-unused-disable-directives .",
     "type-check": "tsc",
     "bench": "vitest bench",
@@ -17,9 +17,9 @@
   "dependencies": {
     "@formatjs/intl": "2.10.0",
     "@formatjs/intl-localematcher": "0.5.4",
-    "@remix-run/cloudflare": "2.6.0",
-    "@remix-run/cloudflare-pages": "2.6.0",
+    "@remix-run/node": "2.6.0",
     "@remix-run/react": "2.6.0",
+    "@remix-run/serve": "2.6.0",
     "core-js": "3.35.1",
     "intl-parse-accept-language": "1.0.0",
     "isbot": "4.4.0",
@@ -39,7 +39,9 @@
     "@types/react-dom": "18.2.18",
     "@typescript-eslint/eslint-plugin": "6.20.0",
     "@typescript-eslint/parser": "6.20.0",
+    "@vercel/remix": "2.5.1",
     "autoprefixer": "10.4.17",
+    "esbuild": "0.20.0",
     "eslint": "8.56.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-jsx-a11y": "6.8.0",
@@ -53,9 +55,9 @@
     "prettier-plugin-tailwindcss": "0.5.11",
     "tailwindcss": "3.4.1",
     "typescript": "5.3.3",
+    "vercel": "33.4.1",
     "vite": "5.0.12",
     "vite-tsconfig-paths": "4.3.1",
-    "vitest": "1.2.2",
-    "wrangler": "3.26.0"
+    "vitest": "1.2.2"
   }
 }

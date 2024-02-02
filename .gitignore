@@ -3,8 +3,7 @@
 node_modules/
 npm-debug.log
 
-.wrangler/
 .cache/
 build/
 
-.dev.vars
+.env

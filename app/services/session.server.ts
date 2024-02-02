@@ -1,6 +1,10 @@
-import { type AppLoadContext, type Session, createCookieSessionStorage } from '@remix-run/cloudflare';
+import { type AppLoadContext, type Session, createCookieSessionStorage } from '@remix-run/node';
 
 import { type SessionData } from '~/services/session';
+
+function getSessionSecret(context: AppLoadContext) {
+  return context.env?.SESSION_SECRET ?? process.env.SESSION_SECRET;
+}
 
 function getSessionStorage(context: AppLoadContext) {
   return createCookieSessionStorage<SessionData>({
@@ -8,7 +12,7 @@ function getSessionStorage(context: AppLoadContext) {
       httpOnly: true,
       path: '/',
       sameSite: 'lax',
-      secrets: [context.env.SESSION_SECRET],
+      secrets: [getSessionSecret(context)],
       secure: import.meta.env.PROD,
     },
   });
