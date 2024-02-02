@@ -1,4 +1,4 @@
-import { type LoaderFunctionArgs, redirect } from '@remix-run/node';
+import { type LoaderFunctionArgs, redirect } from '@remix-run/cloudflare';
 
 import { generateBoard } from '~/services/game';
 import { expectNotToBeNaN } from '~/shared/expect';

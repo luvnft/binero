@@ -4,7 +4,7 @@ import {
   type MetaArgs,
   type MetaDescriptor,
   json,
-} from '@remix-run/node';
+} from '@remix-run/cloudflare';
 import { Links, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData } from '@remix-run/react';
 import { IntlProvider } from 'react-intl';
 
@@ -20,9 +20,9 @@ import { getIntl } from '~/services/intl.server';
 import { getSession } from '~/services/session.server';
 import { getErrorResponse } from '~/shared/http';
 
-export async function loader({ request }: LoaderFunctionArgs) {
+export async function loader({ context, request }: LoaderFunctionArgs) {
   try {
-    const session = await getSession(request);
+    const session = await getSession(context, request);
     const appearance = getAppearance(session);
     const intl = getIntl(session, request.headers);
     const title = intl.formatMessage({ id: 'metaTitle' });

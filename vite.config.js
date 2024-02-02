@@ -1,4 +1,4 @@
-import { unstable_vitePlugin as remix } from '@remix-run/dev';
+import { unstable_cloudflarePreset as cloudflare, unstable_vitePlugin as remix } from '@remix-run/dev';
 import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
@@ -12,9 +12,15 @@ export default defineConfig({
             v3_relativeSplatPath: true,
             v3_throwAbortReason: true,
           },
+          presets: [cloudflare()],
         }),
     tsconfigPaths(),
   ],
+  ssr: {
+    resolve: {
+      externalConditions: ['workerd', 'worker'],
+    },
+  },
   test: {
     setupFiles: ['./test/setup'],
   },

@@ -1,4 +1,4 @@
-import { type LoaderFunctionArgs, json } from '@remix-run/node';
+import { type LoaderFunctionArgs, json } from '@remix-run/cloudflare';
 import { useLoaderData } from '@remix-run/react';
 import { FormattedMessage } from 'react-intl';
 
@@ -13,9 +13,9 @@ import { getSession } from '~/services/session.server';
 import { getErrorResponse } from '~/shared/http';
 import { Random, shuffle } from '~/shared/random';
 
-export async function loader({ request }: LoaderFunctionArgs) {
+export async function loader({ context, request }: LoaderFunctionArgs) {
   try {
-    const session = await getSession(request);
+    const session = await getSession(context, request);
     const game = getGame(session);
     const random = Random.create();
 

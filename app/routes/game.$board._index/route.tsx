@@ -1,4 +1,4 @@
-import { type LoaderFunctionArgs, json } from '@remix-run/node';
+import { type LoaderFunctionArgs, json } from '@remix-run/cloudflare';
 import { type ClientLoaderFunctionArgs, useLoaderData, useLocation, useParams } from '@remix-run/react';
 
 import { Game } from '~/components/ui/game';
@@ -15,9 +15,9 @@ import { Random } from '~/shared/random';
 
 import { GameActionsContent, GameBoardContent, GamePraiseModalContent, GameTipContent } from './components';
 
-export async function loader({ params, request }: LoaderFunctionArgs) {
+export async function loader({ context, params, request }: LoaderFunctionArgs) {
   try {
-    const session = await getSession(request);
+    const session = await getSession(context, request);
     const random = Random.create();
 
     setGame(session, { board: parseBoard(expectToBeDefined(params.board)) });
@@ -26,7 +26,7 @@ export async function loader({ params, request }: LoaderFunctionArgs) {
       { seed: random.seed },
       {
         headers: {
-          'Set-Cookie': await commitSession(session),
+          'Set-Cookie': await commitSession(context, session),
         },
       },
     );

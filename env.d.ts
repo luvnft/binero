@@ -1,8 +1,12 @@
-/// <reference types="@remix-run/node" />
+/// <reference types="@remix-run/cloudflare" />
 /// <reference types="vite/client" />
 
-declare namespace NodeJS {
-  interface ProcessEnv {
-    readonly SESSION_SECRET: string;
+declare module '@remix-run/cloudflare' {
+  interface AppLoadContext {
+    env: {
+      readonly SESSION_SECRET: string;
+    };
   }
 }
+
+export {};
