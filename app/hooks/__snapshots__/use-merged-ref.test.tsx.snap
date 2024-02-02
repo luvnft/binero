@@ -1,0 +1,78 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`returns "null" if no refs defined 1`] = `null`;
+
+exports[`returns "null" if no refs defined 2`] = `null`;
+
+exports[`returns "null" if no refs defined 3`] = `null`;
+
+exports[`returns "null" if no refs defined 4`] = `null`;
+
+exports[`returns merged ref 1`] = `
+[
+  {
+    "current": "value",
+  },
+  {
+    "current": "value",
+  },
+  null,
+  undefined,
+]
+`;
+
+exports[`returns merged ref 2`] = `
+[
+  [MockFunction spy] {
+    "calls": [
+      [
+        "value",
+      ],
+    ],
+    "results": [
+      {
+        "type": "return",
+        "value": undefined,
+      },
+    ],
+  },
+  [MockFunction spy] {
+    "calls": [
+      [
+        "value",
+      ],
+    ],
+    "results": [
+      {
+        "type": "return",
+        "value": undefined,
+      },
+    ],
+  },
+  null,
+  undefined,
+]
+`;
+
+exports[`returns merged ref 3`] = `
+[
+  {
+    "current": "value",
+  },
+  [MockFunction spy] {
+    "calls": [
+      [
+        "value",
+      ],
+    ],
+    "results": [
+      {
+        "type": "return",
+        "value": undefined,
+      },
+    ],
+  },
+  null,
+  undefined,
+]
+`;

@@ -138,3 +138,71 @@ exports[`renders slot 11`] = `
   </span>
 </DocumentFragment>
 `;
+
+exports[`renders slot with ref 1`] = `
+{
+  "slotRef": {
+    "current": <span>
+      Foo
+      <span>
+        Bar
+      </span>
+    </span>,
+  },
+}
+`;
+
+exports[`renders slot with ref 2`] = `
+{
+  "slotRef": {
+    "current": <span>
+      Foo
+      <span>
+        Bar
+      </span>
+    </span>,
+  },
+}
+`;
+
+exports[`renders slot with ref 3`] = `
+{
+  "slotRef": {
+    "current": <span>
+      Foo
+      <span>
+        Bar
+      </span>
+    </span>,
+  },
+  "spanRef": {
+    "current": <span>
+      Foo
+      <span>
+        Bar
+      </span>
+    </span>,
+  },
+}
+`;
+
+exports[`renders slot with ref 4`] = `
+{
+  "slotRef": {
+    "current": <span>
+      Foo
+      <span>
+        Bar
+      </span>
+    </span>,
+  },
+  "spanRef": {
+    "current": <span>
+      Foo
+      <span>
+        Bar
+      </span>
+    </span>,
+  },
+}
+`;

@@ -1,4 +1,4 @@
-import { type ReactNode, useRef } from 'react';
+import { type ReactNode } from 'react';
 
 import { Slot } from '~/components/base/slot';
 import { BoardCellState } from '~/lib/board';
@@ -23,11 +23,6 @@ export function GameBoardCell({
   state: BoardCellState;
 }) {
   const Component = asChild ? Slot : 'span';
-  const keyRef = useRef(0);
-
-  if (highlighted) {
-    keyRef.current += 1;
-  }
 
   return (
     <Component
@@ -35,7 +30,6 @@ export function GameBoardCell({
       data-highlighted={highlighted}
       data-locked={locked}
       data-state={GAME_BOARD_CELL_DATA_STATE_BY_BOARD_CELL_STATE[state]}
-      key={keyRef.current}
     >
       {children}
     </Component>
