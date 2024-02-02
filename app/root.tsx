@@ -5,7 +5,7 @@ import {
   type MetaDescriptor,
   json,
 } from '@remix-run/node';
-import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData } from '@remix-run/react';
+import { Links, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData } from '@remix-run/react';
 import { IntlProvider } from 'react-intl';
 
 import '~/globals';
@@ -77,7 +77,6 @@ export default function Root() {
         </IntlProvider>
         <ScrollRestoration />
         <Scripts />
-        <LiveReload />
       </body>
     </html>
   );
