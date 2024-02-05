@@ -2,6 +2,8 @@ import { HelpCircle } from 'lucide-react';
 import { type ReactNode } from 'react';
 import { FormattedMessage, FormattedNumber } from 'react-intl';
 
+import { AriaLabel } from '~/components/base/aria-label';
+import { AriaLabelled } from '~/components/base/aria-labelled';
 import { HistoryLink } from '~/components/base/history-link';
 import { ButtonLink } from '~/components/ui/button-link';
 import { GameBoardAnalyzerReview } from '~/components/ui/game-board-analyzer-review';
@@ -15,7 +17,7 @@ import { type MatrixSelectionCoords } from '~/lib/matrix';
 import { getNextBoard } from '~/services/game';
 import { Random, sample } from '~/shared/random';
 
-import { PRAISE_MESSAGE_IDS } from './constants';
+import { MESSAGE_ID_BY_BOARD_CELL_STATE, PRAISE_MESSAGE_IDS } from './constants';
 
 export function GameTipContent({
   boardAnalyzerReview,
@@ -49,15 +51,27 @@ export function GameBoardContent({
       const locked = cell.isFixed;
 
       children.push(
-        <GameBoardCell asChild highlighted={highlighted} key={key} locked={locked} state={cell.state}>
-          {locked ? (
-            <HistoryLink preventScrollReset replace tabIndex={-1} to='.?uncloak'>
-              {uncloak && <GameBoardCellLock />}
-            </HistoryLink>
-          ) : (
-            <HistoryLink preventScrollReset replace to={`/game/${getNextBoard(board, { x, y }).toString()}`} />
-          )}
-        </GameBoardCell>,
+        <AriaLabelled key={key}>
+          <GameBoardCell asChild highlighted={highlighted} locked={locked} state={cell.state}>
+            {locked ? (
+              <HistoryLink preventScrollReset replace tabIndex={-1} to='.?uncloak'>
+                {uncloak && <GameBoardCellLock />}
+                <AriaLabel>
+                  <FormattedMessage id={MESSAGE_ID_BY_BOARD_CELL_STATE[cell.state]} />
+                  <FormattedMessage id='gameBoardLockedCellLabel' />
+                  {highlighted && <FormattedMessage id='gameBoardHighlightedCellLabel' />}
+                </AriaLabel>
+              </HistoryLink>
+            ) : (
+              <HistoryLink preventScrollReset replace to={`/game/${getNextBoard(board, { x, y }).toString()}`}>
+                <AriaLabel>
+                  <FormattedMessage id={MESSAGE_ID_BY_BOARD_CELL_STATE[cell.state]} />
+                  {highlighted && <FormattedMessage id='gameBoardHighlightedCellLabel' />}
+                </AriaLabel>
+              </HistoryLink>
+            )}
+          </GameBoardCell>
+        </AriaLabelled>,
       );
     }
   }
@@ -67,9 +81,14 @@ export function GameBoardContent({
 
 export function GameActionsContent() {
   return (
-    <ButtonLink replace size='icon' to='.?analyze' variant='ghost'>
-      <HelpCircle />
-    </ButtonLink>
+    <AriaLabelled>
+      <ButtonLink replace size='icon' to='.?analyze' variant='ghost'>
+        <HelpCircle aria-hidden />
+        <AriaLabel>
+          <FormattedMessage id='gameAnalyzeActionLabel' />
+        </AriaLabel>
+      </ButtonLink>
+    </AriaLabelled>
   );
 }
 

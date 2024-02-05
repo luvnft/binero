@@ -1,4 +1,11 @@
+import { BoardCellState } from '~/lib/board';
 import { type Messages } from '~/services/intl';
+
+export const MESSAGE_ID_BY_BOARD_CELL_STATE: Readonly<Record<BoardCellState, keyof Messages>> = {
+  [BoardCellState.B]: 'gameBoardBCellLabel',
+  [BoardCellState.E]: 'gameBoardECellLabel',
+  [BoardCellState.R]: 'gameBoardRCellLabel',
+};
 
 export const PRAISE_MESSAGE_IDS: ReadonlyArray<keyof Messages> = [
   'gamePraiseMessage0',
