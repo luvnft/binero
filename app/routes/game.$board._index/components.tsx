@@ -13,7 +13,7 @@ import { GameModalFooter } from '~/components/ui/game-modal-footer';
 import { GameModalHeader } from '~/components/ui/game-modal-header';
 import { type Board } from '~/lib/board';
 import { type BoardAnalyzerReview } from '~/lib/board-analyzer';
-import { type MatrixSelectionCoords } from '~/lib/matrix';
+import { type MatrixSelectionPosition } from '~/lib/matrix';
 import { getNextBoard } from '~/services/game';
 import { Random, sample } from '~/shared/random';
 
@@ -35,11 +35,11 @@ export function GameTipContent({
 
 export function GameBoardContent({
   board,
-  boardAnalyzerReviewPayloadData,
+  boardAnalyzerReviewPayloadPositions,
   uncloak,
 }: {
   board: Board;
-  boardAnalyzerReviewPayloadData: readonly MatrixSelectionCoords[];
+  boardAnalyzerReviewPayloadPositions: readonly MatrixSelectionPosition[];
   uncloak: boolean;
 }) {
   const children: ReactNode[] = [];
@@ -47,7 +47,7 @@ export function GameBoardContent({
   for (const [y, line] of board.entries()) {
     for (const [x, cell] of line.entries()) {
       const key = `${x}-${y}`;
-      const highlighted = boardAnalyzerReviewPayloadData.some((coords) => coords.x === x && coords.y === y);
+      const highlighted = boardAnalyzerReviewPayloadPositions.some((position) => position.x === x && position.y === y);
       const locked = cell.isFixed;
 
       children.push(

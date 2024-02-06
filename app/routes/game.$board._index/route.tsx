@@ -52,7 +52,7 @@ export default function Route() {
   const boardSize = board.length;
   const boardSolved = isBoardSolved(board);
   const boardAnalyzerReview = searchParams.has('analyze') ? analyzeBoard(board, new Random(seed)) : undefined;
-  const boardAnalyzerReviewPayloadData = boardAnalyzerReview?.payload.data ?? [];
+  const boardAnalyzerReviewPayloadPositions = boardAnalyzerReview?.payload.positions ?? [];
 
   return (
     <Game>
@@ -62,7 +62,7 @@ export default function Route() {
       <GameBoard size={boardSize}>
         <GameBoardContent
           board={board}
-          boardAnalyzerReviewPayloadData={boardAnalyzerReviewPayloadData}
+          boardAnalyzerReviewPayloadPositions={boardAnalyzerReviewPayloadPositions}
           uncloak={searchParams.has('uncloak')}
         />
       </GameBoard>

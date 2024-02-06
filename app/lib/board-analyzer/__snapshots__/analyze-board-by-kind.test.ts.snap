@@ -5,7 +5,8 @@ exports[`analyzes board by kind 1`] = `undefined`;
 exports[`analyzes board by kind 2`] = `
 {
   "payload": {
-    "data": [
+    "orientation": 0,
+    "positions": [
       {
         "x": 0,
         "y": 1,
@@ -19,7 +20,6 @@ exports[`analyzes board by kind 2`] = `
         "y": 3,
       },
     ],
-    "orientation": 0,
   },
   "reason": 7,
 }
@@ -28,13 +28,13 @@ exports[`analyzes board by kind 2`] = `
 exports[`analyzes board by kind 3`] = `
 {
   "payload": {
-    "data": [
+    "orientation": 0,
+    "positions": [
       {
         "x": 0,
         "y": 1,
       },
     ],
-    "orientation": 0,
   },
   "reason": 6,
 }
@@ -45,7 +45,8 @@ exports[`analyzes board by kind 4`] = `undefined`;
 exports[`analyzes board by kind 5`] = `
 {
   "payload": {
-    "data": [
+    "orientation": 0,
+    "positions": [
       {
         "x": 0,
         "y": 3,
@@ -59,7 +60,6 @@ exports[`analyzes board by kind 5`] = `
         "y": 5,
       },
     ],
-    "orientation": 0,
   },
   "reason": 7,
 }
@@ -68,13 +68,13 @@ exports[`analyzes board by kind 5`] = `
 exports[`analyzes board by kind 6`] = `
 {
   "payload": {
-    "data": [
+    "orientation": 1,
+    "positions": [
       {
         "x": 4,
         "y": 0,
       },
     ],
-    "orientation": 1,
   },
   "reason": 6,
 }

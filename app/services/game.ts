@@ -1,7 +1,7 @@
 import { Board, type BoardValue } from '~/lib/board';
 import * as BoardAnalyzer from '~/lib/board-analyzer';
 import * as BoardGenerator from '~/lib/board-generator';
-import { MatrixSelection, type MatrixSelectionCoords } from '~/lib/matrix';
+import { MatrixSelection, type MatrixSelectionPosition } from '~/lib/matrix';
 import { Random } from '~/shared/random';
 import { type Abortable } from '~/shared/timers';
 
@@ -39,6 +39,6 @@ export function getBoard(value: BoardValue) {
   return Board.from(value);
 }
 
-export function getNextBoard(board: Board, coords: MatrixSelectionCoords) {
-  return board.replaceBy(new MatrixSelection([coords]), (cell) => cell.next());
+export function getNextBoard(board: Board, position: MatrixSelectionPosition) {
+  return board.replaceBy(new MatrixSelection([position]), (cell) => cell.next());
 }

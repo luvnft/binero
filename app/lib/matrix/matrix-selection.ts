@@ -1,45 +1,45 @@
 import { type Matrix, type MatrixCell } from './matrix';
 import { type MatrixLine } from './matrix-line';
 
-export interface MatrixSelectionCoords {
+export interface MatrixSelectionPosition {
   readonly x: number;
   readonly y: number;
 }
 
 export class MatrixSelection {
-  readonly #data: readonly MatrixSelectionCoords[];
+  readonly #positions: readonly MatrixSelectionPosition[];
 
-  constructor(data: readonly MatrixSelectionCoords[]) {
-    this.#data = data;
+  constructor(positions: readonly MatrixSelectionPosition[]) {
+    this.#positions = positions;
   }
 
   static from<M extends Matrix<MatrixLine<unknown>>>(matrix: M, cells: ReadonlyArray<MatrixCell<M>>) {
-    const data: MatrixSelectionCoords[] = [];
+    const positions: MatrixSelectionPosition[] = [];
 
     for (const [y, line] of matrix.entries()) {
       for (const [x, cell] of line.entries()) {
         for (const other of cells) {
           if (cell === other) {
-            data.push({ x, y });
+            positions.push({ x, y });
           }
         }
       }
     }
 
-    return new this(data);
+    return new this(positions);
   }
 
   execute<M extends Matrix<MatrixLine<unknown>>>(matrix: M) {
     const cells: Array<MatrixCell<M>> = [];
 
-    for (const coords of this.#data) {
-      const line = matrix.at(coords.y);
+    for (const position of this.#positions) {
+      const line = matrix.at(position.y);
 
       if (line === undefined) {
         continue;
       }
 
-      const cell = line.at(coords.x);
+      const cell = line.at(position.x);
 
       if (cell === undefined) {
         continue;
@@ -52,6 +52,6 @@ export class MatrixSelection {
   }
 
   valueOf() {
-    return this.#data;
+    return this.#positions;
   }
 }

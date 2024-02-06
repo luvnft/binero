@@ -9,7 +9,7 @@ import {
   selectThreeOrMoreIdenticalSequentialCells,
   selectUnfilledBalancedLine,
 } from '~/lib/board-selectors';
-import { MatrixSelection, type MatrixSelectionCoords } from '~/lib/matrix';
+import { MatrixSelection, type MatrixSelectionPosition } from '~/lib/matrix';
 import { type Random, shuffle } from '~/shared/random';
 
 export enum BoardAnalyzerReviewKind {
@@ -29,8 +29,8 @@ export enum BoardAnalyzerReviewReason {
 }
 
 export interface BoardAnalyzerReviewPayload {
-  readonly data: readonly MatrixSelectionCoords[];
   readonly orientation: BoardOrientation;
+  readonly positions: readonly MatrixSelectionPosition[];
 }
 
 export interface BoardAnalyzerReview {
@@ -68,8 +68,8 @@ const SELECT_BY_BOARD_ANALYZER_REVIEW_REASON: Readonly<
     const cells = [...Array.from(payload.line), ...Array.from(payload.another)];
 
     return {
-      data: MatrixSelection.from(target, cells).valueOf(),
       orientation: payload.orientation,
+      positions: MatrixSelection.from(target, cells).valueOf(),
     };
   },
 
@@ -83,8 +83,8 @@ const SELECT_BY_BOARD_ANALYZER_REVIEW_REASON: Readonly<
     const cells = [...Array.from(payload.line), ...Array.from(payload.another)];
 
     return {
-      data: MatrixSelection.from(target, cells).valueOf(),
       orientation: payload.orientation,
+      positions: MatrixSelection.from(target, cells).valueOf(),
     };
   },
 
@@ -98,8 +98,8 @@ const SELECT_BY_BOARD_ANALYZER_REVIEW_REASON: Readonly<
     const cells = [...Array.from(payload.line), ...payload.others.flatMap((line) => Array.from(line))];
 
     return {
-      data: MatrixSelection.from(target, cells).valueOf(),
       orientation: payload.orientation,
+      positions: MatrixSelection.from(target, cells).valueOf(),
     };
   },
 
@@ -113,8 +113,8 @@ const SELECT_BY_BOARD_ANALYZER_REVIEW_REASON: Readonly<
     const cells = Array.from(payload.line);
 
     return {
-      data: MatrixSelection.from(target, cells).valueOf(),
       orientation: payload.orientation,
+      positions: MatrixSelection.from(target, cells).valueOf(),
     };
   },
 
@@ -128,8 +128,8 @@ const SELECT_BY_BOARD_ANALYZER_REVIEW_REASON: Readonly<
     const cells = Array.from(payload.line);
 
     return {
-      data: MatrixSelection.from(target, cells).valueOf(),
       orientation: payload.orientation,
+      positions: MatrixSelection.from(target, cells).valueOf(),
     };
   },
 
@@ -143,8 +143,8 @@ const SELECT_BY_BOARD_ANALYZER_REVIEW_REASON: Readonly<
     const cells = [payload.cell];
 
     return {
-      data: MatrixSelection.from(target, cells).valueOf(),
       orientation: payload.orientation,
+      positions: MatrixSelection.from(target, cells).valueOf(),
     };
   },
 
@@ -158,8 +158,8 @@ const SELECT_BY_BOARD_ANALYZER_REVIEW_REASON: Readonly<
     const cells = [payload.cell];
 
     return {
-      data: MatrixSelection.from(target, cells).valueOf(),
       orientation: payload.orientation,
+      positions: MatrixSelection.from(target, cells).valueOf(),
     };
   },
 
@@ -173,8 +173,8 @@ const SELECT_BY_BOARD_ANALYZER_REVIEW_REASON: Readonly<
     const cells = payload.cells;
 
     return {
-      data: MatrixSelection.from(target, cells).valueOf(),
       orientation: payload.orientation,
+      positions: MatrixSelection.from(target, cells).valueOf(),
     };
   },
 };
