@@ -48,6 +48,11 @@ export default function Route() {
             <FormattedMessage id='menuGameLink' />
           </ButtonLink>
         </MenuItem>
+        <MenuItem>
+          <ButtonLink to='/game/tutorial' variant='secondary'>
+            <FormattedMessage id='menuGameTutorialLink' />
+          </ButtonLink>
+        </MenuItem>
       </MenuGroup>
     </Menu>
   );

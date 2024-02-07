@@ -1,10 +1,10 @@
 import { type LoaderFunctionArgs, json } from '@remix-run/node';
 import { type ClientLoaderFunctionArgs, useLoaderData, useLocation, useParams } from '@remix-run/react';
 
+import { GamePraiseModal } from '~/components/game-praise-modal';
 import { Game } from '~/components/ui/game';
 import { GameActions } from '~/components/ui/game-actions';
 import { GameBoard } from '~/components/ui/game-board';
-import { GameModal } from '~/components/ui/game-modal';
 import { GameTip } from '~/components/ui/game-tip';
 import { analyzeBoard, isBoardSolved, parseBoard } from '~/services/game';
 import { setGame } from '~/services/game.server';
@@ -13,7 +13,7 @@ import { expectToBeDefined } from '~/shared/expect';
 import { getErrorResponse } from '~/shared/http';
 import { Random } from '~/shared/random';
 
-import { GameActionsContent, GameBoardContent, GamePraiseModalContent, GameTipContent } from './components';
+import { GameActionsContent, GameBoardContent, GameTipContent } from './components';
 
 export async function loader({ context, params, request }: LoaderFunctionArgs) {
   try {
@@ -60,20 +60,12 @@ export default function Route() {
         <GameTipContent boardAnalyzerReview={boardAnalyzerReview} progress={board.progress} />
       </GameTip>
       <GameBoard size={boardSize}>
-        <GameBoardContent
-          board={board}
-          boardAnalyzerReviewPayloadPositions={boardAnalyzerReviewPayloadPositions}
-          uncloak={searchParams.has('uncloak')}
-        />
+        <GameBoardContent board={board} boardAnalyzerReviewPayloadPositions={boardAnalyzerReviewPayloadPositions} />
       </GameBoard>
       <GameActions>
         <GameActionsContent />
       </GameActions>
-      {boardSolved && (
-        <GameModal>
-          <GamePraiseModalContent seed={seed} size={boardSize} />
-        </GameModal>
-      )}
+      {boardSolved && <GamePraiseModal seed={seed} size={boardSize} />}
     </Game>
   );
 }

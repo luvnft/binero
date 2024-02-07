@@ -13,6 +13,16 @@ export class MatrixSelection {
     this.#positions = positions;
   }
 
+  static concat(...selections: readonly MatrixSelection[]) {
+    const positions: MatrixSelectionPosition[] = [];
+
+    for (const selection of selections) {
+      positions.push(...selection.#positions);
+    }
+
+    return new this(positions);
+  }
+
   static from<M extends Matrix<MatrixLine<unknown>>>(matrix: M, cells: ReadonlyArray<MatrixCell<M>>) {
     const positions: MatrixSelectionPosition[] = [];
 
@@ -27,6 +37,26 @@ export class MatrixSelection {
     }
 
     return new this(positions);
+  }
+
+  static parse(value: string) {
+    return new this(JSON.parse(atob(value)) as readonly MatrixSelectionPosition[]);
+  }
+
+  exclude(other: MatrixSelection) {
+    const positions: MatrixSelectionPosition[] = [...this.#positions];
+
+    for (const position of other.#positions) {
+      const index = positions.findIndex((other) => other.x === position.x && other.y === position.y);
+
+      if (index === -1) {
+        continue;
+      }
+
+      positions.splice(index, 1);
+    }
+
+    return new MatrixSelection(positions);
   }
 
   execute<M extends Matrix<MatrixLine<unknown>>>(matrix: M) {
@@ -51,7 +81,15 @@ export class MatrixSelection {
     return cells;
   }
 
+  toString() {
+    return btoa(JSON.stringify(this.valueOf()));
+  }
+
   valueOf() {
     return this.#positions;
+  }
+
+  get length() {
+    return this.#positions.length;
   }
 }
