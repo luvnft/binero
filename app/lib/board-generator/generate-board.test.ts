@@ -13,5 +13,5 @@ test.each([
   [10, 0.6],
   [12, 0.6],
 ])('generates board', (size, progress) => {
-  expect(generateBoard(size, progress, new Random(0))).resolves.toMatchSnapshot();
+  expect(generateBoard(size, progress, Random.stable())).resolves.toMatchSnapshot();
 });

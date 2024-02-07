@@ -17,7 +17,7 @@ export function isBoardSolved(board: Board) {
   const boardAnalyzerReview = BoardAnalyzer.analyzeBoardByKind(
     BoardAnalyzer.BoardAnalyzerReviewKind.Correction,
     board,
-    Random.create(),
+    Random.stable(),
   );
 
   return boardAnalyzerReview === undefined;

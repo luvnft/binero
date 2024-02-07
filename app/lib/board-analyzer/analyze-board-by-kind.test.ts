@@ -67,5 +67,5 @@ test.each([
     ]),
   ],
 ])('analyzes board by kind', (kind, target) => {
-  expect(analyzeBoardByKind(kind, target, new Random(0))).toMatchSnapshot();
+  expect(analyzeBoardByKind(kind, target, Random.stable())).toMatchSnapshot();
 });

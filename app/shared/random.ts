@@ -15,6 +15,10 @@ export class Random {
     return new this(Date.now() ^ (Math.random() * 0x100000000));
   }
 
+  static stable() {
+    return new this(0);
+  }
+
   next(from: number, to: number) {
     const [value, generator] = uniformIntDistribution(from, to, this.#generator);
 
