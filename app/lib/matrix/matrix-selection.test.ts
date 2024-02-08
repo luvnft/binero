@@ -5,6 +5,26 @@ import { MatrixSelection } from './matrix-selection';
 test.each([
   [
     [
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9],
+    ],
+    [1, 1, 4, 5, 7, 9],
+  ],
+  [
+    [
+      [1, 2],
+      [4, 5],
+    ],
+    [1, 1, 4, 5],
+  ],
+])('collects matrix selection from cells', (matrix, cells) => {
+  expect(MatrixSelection.collect(matrix, cells).execute(matrix)).toMatchSnapshot();
+});
+
+test.each([
+  [
+    [
       new MatrixSelection([{ x: 0, y: 0 }]),
       new MatrixSelection([{ x: 0, y: 0 }]),
       new MatrixSelection([{ x: 0, y: 1 }]),
@@ -23,26 +43,6 @@ test.each([
   ],
 ])('concatenates matrix selection', (selections) => {
   expect(MatrixSelection.concat(...selections).valueOf()).toMatchSnapshot();
-});
-
-test.each([
-  [
-    [
-      [1, 2, 3],
-      [4, 5, 6],
-      [7, 8, 9],
-    ],
-    [1, 1, 4, 5, 7, 9],
-  ],
-  [
-    [
-      [1, 2],
-      [4, 5],
-    ],
-    [1, 1, 4, 5],
-  ],
-])('returns matrix selection from cells', (matrix, cells) => {
-  expect(MatrixSelection.from(matrix, cells).execute(matrix)).toMatchSnapshot();
 });
 
 test.each([

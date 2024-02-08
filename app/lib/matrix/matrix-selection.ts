@@ -13,17 +13,7 @@ export class MatrixSelection {
     this.#positions = positions;
   }
 
-  static concat(...selections: readonly MatrixSelection[]) {
-    const positions: MatrixSelectionPosition[] = [];
-
-    for (const selection of selections) {
-      positions.push(...selection.#positions);
-    }
-
-    return new this(positions);
-  }
-
-  static from<M extends Matrix<MatrixLine<unknown>>>(matrix: M, cells: ReadonlyArray<MatrixCell<M>>) {
+  static collect<M extends Matrix<MatrixLine<unknown>>>(matrix: M, cells: ReadonlyArray<MatrixCell<M>>) {
     const positions: MatrixSelectionPosition[] = [];
 
     for (const [y, line] of matrix.entries()) {
@@ -34,6 +24,16 @@ export class MatrixSelection {
           }
         }
       }
+    }
+
+    return new this(positions);
+  }
+
+  static concat(...selections: readonly MatrixSelection[]) {
+    const positions: MatrixSelectionPosition[] = [];
+
+    for (const selection of selections) {
+      positions.push(...selection.#positions);
     }
 
     return new this(positions);

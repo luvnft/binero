@@ -69,7 +69,7 @@ const SELECT_BY_BOARD_ANALYZER_REVIEW_REASON: Readonly<
 
     return {
       orientation: payload.orientation,
-      positions: MatrixSelection.from(target, cells).valueOf(),
+      positions: MatrixSelection.collect(target, cells).valueOf(),
     };
   },
 
@@ -84,7 +84,7 @@ const SELECT_BY_BOARD_ANALYZER_REVIEW_REASON: Readonly<
 
     return {
       orientation: payload.orientation,
-      positions: MatrixSelection.from(target, cells).valueOf(),
+      positions: MatrixSelection.collect(target, cells).valueOf(),
     };
   },
 
@@ -99,7 +99,7 @@ const SELECT_BY_BOARD_ANALYZER_REVIEW_REASON: Readonly<
 
     return {
       orientation: payload.orientation,
-      positions: MatrixSelection.from(target, cells).valueOf(),
+      positions: MatrixSelection.collect(target, cells).valueOf(),
     };
   },
 
@@ -114,7 +114,7 @@ const SELECT_BY_BOARD_ANALYZER_REVIEW_REASON: Readonly<
 
     return {
       orientation: payload.orientation,
-      positions: MatrixSelection.from(target, cells).valueOf(),
+      positions: MatrixSelection.collect(target, cells).valueOf(),
     };
   },
 
@@ -129,7 +129,7 @@ const SELECT_BY_BOARD_ANALYZER_REVIEW_REASON: Readonly<
 
     return {
       orientation: payload.orientation,
-      positions: MatrixSelection.from(target, cells).valueOf(),
+      positions: MatrixSelection.collect(target, cells).valueOf(),
     };
   },
 
@@ -144,7 +144,7 @@ const SELECT_BY_BOARD_ANALYZER_REVIEW_REASON: Readonly<
 
     return {
       orientation: payload.orientation,
-      positions: MatrixSelection.from(target, cells).valueOf(),
+      positions: MatrixSelection.collect(target, cells).valueOf(),
     };
   },
 
@@ -159,7 +159,7 @@ const SELECT_BY_BOARD_ANALYZER_REVIEW_REASON: Readonly<
 
     return {
       orientation: payload.orientation,
-      positions: MatrixSelection.from(target, cells).valueOf(),
+      positions: MatrixSelection.collect(target, cells).valueOf(),
     };
   },
 
@@ -174,7 +174,7 @@ const SELECT_BY_BOARD_ANALYZER_REVIEW_REASON: Readonly<
 
     return {
       orientation: payload.orientation,
-      positions: MatrixSelection.from(target, cells).valueOf(),
+      positions: MatrixSelection.collect(target, cells).valueOf(),
     };
   },
 };

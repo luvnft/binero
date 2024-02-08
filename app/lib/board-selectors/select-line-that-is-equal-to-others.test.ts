@@ -35,7 +35,7 @@ test.each([
 
   assert(payload !== undefined);
 
-  const selection = MatrixSelection.from(target, [
+  const selection = MatrixSelection.collect(target, [
     ...Array.from(payload.line),
     ...payload.others.flatMap((line) => Array.from(line)),
   ]);
