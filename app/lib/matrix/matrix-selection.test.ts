@@ -42,14 +42,14 @@ test.each([
     ],
   ],
 ])('concatenates matrix selection', (selections) => {
-  expect(MatrixSelection.concat(...selections).valueOf()).toMatchSnapshot();
+  expect(MatrixSelection.concat(...selections)).toMatchSnapshot();
 });
 
 test.each([
   'W3sieCI6MCwieSI6MH0seyJ4IjowLCJ5IjowfSx7IngiOjAsInkiOjF9LHsieCI6MSwieSI6MX0seyJ4IjowLCJ5IjoyfSx7IngiOjIsInkiOjJ9XQ==',
   'W3sieCI6MCwieSI6MH0seyJ4IjowLCJ5IjowfSx7IngiOjAsInkiOjF9LHsieCI6MSwieSI6MX1d',
 ])('returns matrix selection from string', (value) => {
-  expect(MatrixSelection.parse(value).valueOf()).toMatchSnapshot();
+  expect(MatrixSelection.parse(value)).toMatchSnapshot();
 });
 
 test.each([
@@ -85,7 +85,7 @@ test.each([
     ]),
   ],
 ])('excludes matrix selection', (selection, other) => {
-  expect(selection.exclude(other).valueOf()).toMatchSnapshot();
+  expect(selection.exclude(other)).toMatchSnapshot();
 });
 
 test.each([

@@ -3,6 +3,7 @@ import { expect } from 'vitest';
 import '~/globals';
 
 import { Board, BoardCell, BoardCellState, BoardLine } from '~/lib/board';
+import { MatrixSelection } from '~/lib/matrix';
 
 const BOARD_CELL_CONTENT_BY_BOARD_CELL_STATE: Readonly<Record<BoardCellState, string>> = {
   [BoardCellState.B]: '\uD83D\uDFE6',
@@ -39,5 +40,15 @@ expect.addSnapshotSerializer({
 
   test(value: unknown) {
     return value instanceof Board;
+  },
+});
+
+expect.addSnapshotSerializer({
+  serialize(value: MatrixSelection, config, indentation, depth, refs, printer) {
+    return printer(value.valueOf(), config, indentation, depth, refs);
+  },
+
+  test(value: unknown) {
+    return value instanceof MatrixSelection;
   },
 });
