@@ -3,7 +3,7 @@
   "sideEffects": false,
   "type": "module",
   "engines": {
-    "node": ">=20.11.0"
+    "node": ">18.x"
   },
   "scripts": {
     "build": "remix vite:build",
