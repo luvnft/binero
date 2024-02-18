@@ -9,7 +9,6 @@ import { Links, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData } from '
 import { IntlProvider } from 'react-intl';
 
 import '~/globals';
-import '~/globals.css';
 
 import { Layout } from '~/components/ui/layout';
 import { LayoutContent } from '~/components/ui/layout-content';
@@ -19,6 +18,8 @@ import { type Messages } from '~/services/intl';
 import { getIntl } from '~/services/intl.server';
 import { getSession } from '~/services/session.server';
 import { getErrorResponse } from '~/shared/http';
+
+import root from './root.css?url';
 
 export async function loader({ context, request }: LoaderFunctionArgs) {
   try {
@@ -52,6 +53,7 @@ export function links(): LinkDescriptor[] {
     { href: '/favicon.ico', rel: 'icon', sizes: '64x64' },
     { href: '/favicon.svg', rel: 'icon', type: 'image/svg+xml' },
     { href: '/apple-touch-icon.png', rel: 'apple-touch-icon' },
+    { href: root, rel: 'stylesheet' },
   ];
 }
 
